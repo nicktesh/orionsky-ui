@@ -1,23 +1,28 @@
 /* Cards */
 .os-card {
-  background-color: var(--background-color);
-  border: 1px solid var(--text-color);
-  border-radius: 0.5rem;
+  background-color: #fff;
+  border-radius: 0.75rem;
   padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 
-  &__header {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+  &:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   }
 
-  &__body {
+  &-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+
+  &-body {
     font-size: 1rem;
     color: var(--text-color);
   }
 
-  &__footer {
+  &-footer {
     margin-top: 1rem;
     text-align: right;
   }

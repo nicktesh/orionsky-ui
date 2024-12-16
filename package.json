@@ -4,8 +4,9 @@
   "description": "A modern, open-source UI library built with SCSS and CSS variables.",
   "main": "dist/orionsky.css",
   "scripts": {
-    "build": "sass src/scss/orionsky.scss dist/orionsky.css --no-source-map && postcss dist/orionsky.css -o dist/orionsky.min.css && npm run build-js",
+    "build": "sass src/scss/orionsky.scss dist/orionsky.css --no-source-map && postcss dist/orionsky.css -o dist/orionsky.min.css && npm run build-js && npm run build-demo",
     "build-js": "rollup -c",
+    "build-demo": "sass demo/demo.scss dist/demo.css --no-source-map",
     "watch": "sass --watch src/scss/orionsky.scss dist/orionsky.css"
   },
   "author": "Nick Tesh",

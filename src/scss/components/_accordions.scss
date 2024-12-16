@@ -1,38 +1,56 @@
 /* Accordions */
 .os-accordion {
-  border: 1px solid var(--text-color);
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   overflow: hidden;
-  margin-bottom: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
-  &__item {
-    border-bottom: 1px solid var(--text-color);
+  &-item {
+    border-bottom: 1px solid #e2e8f0;
 
     &:last-child {
       border-bottom: none;
     }
-  }
 
-  &__header {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    padding: 1rem;
-    cursor: pointer;
-    font-weight: 600;
-
-    &:hover {
-      background-color: var(--secondary-color);
-      color: #fff;
+    &.active .os-accordion-header::after {
+      content: "-";
     }
   }
 
-  &__content {
-    display: none;
-    padding: 1rem;
-    background-color: #f9f9f9;
+  &-header {
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    background-color: #f9fafb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &::after {
+      content: "+";
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      transition: transform 0.3s ease;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: var(--primary-color);
+      color: #fff;
+      &::after {
+        color: #fff;
+      }
+    }
   }
 
-  &__item.active &__content {
-    display: block;
+  &-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  &-inner {
+    padding: 1rem 1.5rem;
   }
 }

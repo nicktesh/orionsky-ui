@@ -1,34 +1,36 @@
-/* Modals using <dialog> */
+/* Modals */
 .os-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border: none;
-  border-radius: 0.5rem;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 1.5rem;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   max-width: 500px;
   width: 100%;
 
-  /* Overlay */
   &::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  /* Header, Body, Footer */
-  &__header {
-    font-size: 1.25rem;
-    font-weight: 700;
+  &-header {
+    font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 1rem;
   }
 
-  &__body {
-    margin-bottom: 1rem;
-    font-size: 1rem;
+  &-body {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
   }
 
-  &__footer {
+  &-footer {
+    text-align: right;
     display: flex;
+    gap: 0.75rem;
     justify-content: flex-end;
-    gap: 0.5rem;
   }
 }

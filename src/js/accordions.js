@@ -1,30 +1,29 @@
-// Get all accordion headers
-const accordionHeaders = document.querySelectorAll(".os-accordion__header");
+const accordionHeaders = document.querySelectorAll(".os-accordion-header");
 
-// Function to toggle accordion
-function toggleAccordion(header) {
-  const item = header.parentElement;
-  const content = item.querySelector(".os-accordion__content");
-
-  // Check if the item is already active
-  if (item.classList.contains("active")) {
-    item.classList.remove("active");
-    content.style.maxHeight = null; // Collapse the content
-  } else {
-    // Close other active accordions (optional for single-expand behavior)
-    const accordion = item.parentElement;
-    accordion.querySelectorAll(".os-accordion__item.active").forEach((activeItem) => {
-      activeItem.classList.remove("active");
-      activeItem.querySelector(".os-accordion__content").style.maxHeight = null;
-    });
-
-    // Open the clicked accordion
-    item.classList.add("active");
-    content.style.maxHeight = content.scrollHeight + "px"; // Expand content
-  }
-}
-
-// Add event listeners to accordion headers
 accordionHeaders.forEach((header) => {
-  header.addEventListener("click", () => toggleAccordion(header));
+  header.addEventListener("click", () => {
+    const item = header.parentElement;
+    const content = item.querySelector(".os-accordion-content");
+
+    if (item.classList.contains("active")) {
+      // Collapse the accordion
+      content.style.height = content.scrollHeight + "px";
+      setTimeout(() => {
+        content.style.height = "0";
+      });
+      item.classList.remove("active");
+    } else {
+      // Close other active accordions
+      document.querySelectorAll(".os-accordion-item").forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active");
+          otherItem.querySelector(".os-accordion-content").style.height = "0";
+        }
+      });
+
+      // Expand the clicked accordion
+      item.classList.add("active");
+      content.style.height = content.scrollHeight + "px";
+    }
+  });
 });

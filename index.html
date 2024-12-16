@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OrionSky UI - Demo</title>
     <link rel="stylesheet" href="dist/orionsky.min.css" />
+    <link rel="stylesheet" href="dist/demo.css" />
   </head>
   <body>
     <header>
@@ -52,10 +53,10 @@
     <!-- Alerts -->
     <section class="section">
       <h2 class="section-title">Alerts</h2>
-      <div class="os-alert os-alert--success">This is a success alert!</div>
-      <div class="os-alert os-alert--error">This is an error alert!</div>
-      <div class="os-alert os-alert--info">This is an info alert!</div>
-      <div class="os-alert os-alert--warning">This is a warning alert!</div>
+      <div class="os-alert os-alert-success">This is a success alert!</div>
+      <div class="os-alert os-alert-error">This is an error alert!</div>
+      <div class="os-alert os-alert-info">This is an info alert!</div>
+      <div class="os-alert os-alert-warning">This is a warning alert!</div>
     </section>
 
     <!-- Modals -->
@@ -63,9 +64,9 @@
       <h2 class="section-title">Modals</h2>
       <button class="os-btn" data-modal-target="#demo-modal">Open Modal</button>
       <dialog id="demo-modal" class="os-modal">
-        <div class="os-modal__header">Modal Title</div>
-        <div class="os-modal__body">This is the content of the modal.</div>
-        <div class="os-modal__footer">
+        <div class="os-modal-header">Modal Title</div>
+        <div class="os-modal-body">This is the content of the modal.</div>
+        <div class="os-modal-footer">
           <button class="os-btn os-btn-outline" data-modal-close>Close</button>
           <button class="os-btn">Confirm</button>
         </div>
@@ -74,15 +75,25 @@
 
     <!-- Accordions -->
     <section class="section">
-      <h2 class="section-title">Accordions</h2>
+      <h2 class="section-title">Accordion</h2>
       <div class="os-accordion">
-        <div class="os-accordion__item">
-          <div class="os-accordion__header">Accordion 1</div>
-          <div class="os-accordion__content">This is the content for Accordion 1.</div>
+        <div class="os-accordion-item">
+          <div class="os-accordion-header">Accordion Item 1</div>
+          <div class="os-accordion-content">
+            <div class="os-accordion-inner">This is the content for Accordion Item 1. It is clean, modern, and expandable.</div>
+          </div>
         </div>
-        <div class="os-accordion__item">
-          <div class="os-accordion__header">Accordion 2</div>
-          <div class="os-accordion__content">This is the content for Accordion 2.</div>
+        <div class="os-accordion-item">
+          <div class="os-accordion-header">Accordion Item 2</div>
+          <div class="os-accordion-content">
+            <div class="os-accordion-inner">Content for Accordion Item 2. Styling matches the OrionSky UI style.</div>
+          </div>
+        </div>
+        <div class="os-accordion-item">
+          <div class="os-accordion-header">Accordion Item 3</div>
+          <div class="os-accordion-content">
+            <div class="os-accordion-inner">Content for Accordion Item 3.</div>
+          </div>
         </div>
       </div>
     </section>
