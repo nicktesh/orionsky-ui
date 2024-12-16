@@ -31,20 +31,16 @@
    npm install
    ```
 
-3. Compile SCSS:
+3. Build the Library:
 
-   - To build the CSS file:
+   - To compile SCSS, minify CSS, and bundle JavaScript, run:
      ```bash
      npm run build
      ```
-   - To watch for changes:
-     ```bash
-     npm run watch
-     ```
 
-4. Minify CSS for production:
+4. Watch for changes (SCSS only):
    ```bash
-   npm run minify
+   npm run watch
    ```
 
 ---
