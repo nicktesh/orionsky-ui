@@ -1,0 +1,43 @@
+// SCSS Variables for Processing
+$primary-color: #5a67d8;
+$secondary-color: #68d391;
+$background-color: #ffffff;
+$text-color: #000000;
+$font-family-base: "Inter", sans-serif;
+$font-size-base: 16px;
+$spacing-scale: (
+  "0": 0,
+  "1": 0.25rem,
+  "2": 0.5rem,
+  "3": 0.75rem,
+  "4": 1rem,
+  "5": 1.25rem,
+);
+$breakpoints: (
+  "sm": 375px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "2xl": 1400px,
+  "3xl": 1600px,
+);
+
+// Assign SCSS Variables to CSS Variables
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --background-color: #{$background-color};
+  --text-color: #{$text-color};
+  --font-family-base: #{$font-family-base};
+  --font-size-base: #{$font-size-base};
+
+  // Spacing Scale
+  @each $key, $value in $spacing-scale {
+    --spacing-#{$key}: #{$value};
+  }
+
+  // Breakpoints (Optional, for debugging or live adjustments)
+  @each $key, $value in $breakpoints {
+    --breakpoint-#{$key}: #{$value};
+  }
+}

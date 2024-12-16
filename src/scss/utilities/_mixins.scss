@@ -1,0 +1,15 @@
+// Responsive Mixin
+@mixin respond($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+// Spacing Mixin
+@mixin spacing($property, $size) {
+  @if map-has-key($spacing-scale, $size) {
+    #{$property}: var(--spacing-#{$size});
+  }
+}
