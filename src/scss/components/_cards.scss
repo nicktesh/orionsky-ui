@@ -1,0 +1,24 @@
+/* Cards */
+.os-card {
+  background-color: var(--background-color);
+  border: 1px solid var(--text-color);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__body {
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+
+  &__footer {
+    margin-top: 1rem;
+    text-align: right;
+  }
+}

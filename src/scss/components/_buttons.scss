@@ -1,0 +1,33 @@
+/* Buttons */
+.os-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: #fff;
+
+  &:hover {
+    background-color: var(--secondary-color);
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  &.os-btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+  }
+}
