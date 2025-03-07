@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrionSky UI - Cosmic Showcase</title>
+    <link rel="stylesheet" href="../dist/orionsky-ui.css" />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      .os-hero {
+        background: linear-gradient(135deg, #121212 0%, #1e2a3a 100%);
+        color: white;
+        padding: 6rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .os-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(circle at 20% 30%, rgba(62, 100, 255, 0.15) 0%, transparent 20%), radial-gradient(circle at 80% 70%, rgba(94, 223, 255, 0.1) 0%, transparent 20%);
+        z-index: 0;
+      }
+
+      .os-hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .os-hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(to right, #5a7bff, #7fecff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+
+      .os-hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .os-section {
+        padding: 5rem 0;
+      }
+
+      .os-section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .os-section-title h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--os-primary-color);
+      }
+
+      .os-section-title p {
+        font-size: 1.25rem;
+        color: var(--os-text-muted-color);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .os-feature-card {
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+
+      .os-feature-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .os-feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--os-primary-color);
+      }
+
+      .theme-toggle-fixed {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+
+      .os-cosmic-bg {
+        background-color: var(--os-primary-color);
+        background-image: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 20%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 20%);
+        color: white;
+      }
+
+      .os-card-cosmic {
+        overflow: visible;
+      }
+
+      .os-card-cosmic::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        background: linear-gradient(135deg, var(--os-primary-color) 0%, var(--os-secondary-color) 100%);
+        border-radius: calc(var(--os-border-radius) + 5px);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .os-card-cosmic:hover::before {
+        opacity: 0.7;
+      }
+
+      [data-theme="dark"] .os-section:nth-child(odd) {
+        background-color: #1a1a1a;
+      }
+
+      .star {
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        animation: twinkle 4s infinite;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.2;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      /* Navigation styles */
+      .os-nav-section {
+        padding: 2rem 0;
+        background: linear-gradient(135deg, rgba(62, 100, 255, 0.05) 0%, rgba(94, 223, 255, 0.05) 100%);
+      }
+
+      .os-nav-card {
+        transition: all 0.3s ease;
+        border: 1px solid var(--os-border-color);
+        height: 100%;
+      }
+
+      .os-nav-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--os-box-shadow-cosmic);
+        border-color: var(--os-primary-color);
+      }
+
+      .os-nav-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--os-primary-color);
+      }
+
+      .os-nav-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .os-nav-link:hover {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="os-button os-button-cosmic theme-toggle-fixed os-theme-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+      </svg>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="os-hero">
+      <div class="os-container os-text-center os-hero-content">
+        <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" style="height: 80px; margin-bottom: 2rem" />
+        <h1 class="os-hero-title">Cosmic-Inspired UI</h1>
+        <p class="os-hero-subtitle">A modern, open-source CSS/JavaScript library with a unique cosmic aesthetic</p>
+        <div class="os-mt-4">
+          <a href="#navigation" class="os-button os-button-cosmic os-button-lg os-mr-3">Explore Components</a>
+          <a href="https://github.com/orionsky-ui/orionsky-ui" class="os-button os-button-outline-light os-button-lg">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="os-section" id="features">
+      <div class="os-container">
+        <div class="os-section-title">
+          <h2>Why OrionSky UI?</h2>
+          <p>A fresh approach to UI components with cosmic-inspired design elements</p>
+        </div>
+
+        <div class="os-row os-mt-5">
+          <div class="os-col-md-4 os-mb-4">
+            <div class="os-card os-feature-card os-card-cosmic">
+              <div class="os-card-body os-text-center">
+                <div class="os-feature-icon">✨</div>
+                <h3>Unique Design</h3>
+                <p>Distinctive cosmic-inspired aesthetics that stand out from generic frameworks</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="os-col-md-4 os-mb-4">
+            <div class="os-card os-feature-card os-card-cosmic">
+              <div class="os-card-body os-text-center">
+                <div class="os-feature-icon">🎨</div>
+                <h3>Easy Customization</h3>
+                <p>Simple variable system makes it easy to adapt to your brand</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="os-col-md-4 os-mb-4">
+            <div class="os-card os-feature-card os-card-cosmic">
+              <div class="os-card-body os-text-center">
+                <div class="os-feature-icon">🌓</div>
+                <h3>Dark Mode Built-in</h3>
+                <p>Seamless light and dark mode switching with cosmic-inspired themes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Section -->
+    <section class="os-nav-section" id="navigation">
+      <div class="os-container">
+        <div class="os-section-title">
+          <h2>Explore OrionSky UI</h2>
+          <p>Discover all components and structures with detailed examples</p>
+        </div>
+
+        <div class="os-row os-mt-5">
+          <!-- Components -->
+          <div class="os-col-md-4 os-mb-4">
+            <a href="components.html" class="os-nav-link">
+              <div class="os-card os-nav-card">
+                <div class="os-card-body os-text-center">
+                  <div class="os-nav-icon">🧩</div>
+                  <h3>Components</h3>
+                  <p>Buttons, cards, forms, modals, dropdowns and more</p>
+                  <button class="os-button os-button-primary os-mt-3">View Components</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Structures -->
+          <div class="os-col-md-4 os-mb-4">
+            <a href="structures.html" class="os-nav-link">
+              <div class="os-card os-nav-card">
+                <div class="os-card-body os-text-center">
+                  <div class="os-nav-icon">🏗️</div>
+                  <h3>Structures</h3>
+                  <p>Headers, footers, navbars, and sidebars</p>
+                  <button class="os-button os-button-primary os-mt-3">View Structures</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Layouts -->
+          <div class="os-col-md-4 os-mb-4">
+            <a href="layout.html" class="os-nav-link">
+              <div class="os-card os-nav-card">
+                <div class="os-card-body os-text-center">
+                  <div class="os-nav-icon">📐</div>
+                  <h3>Layouts</h3>
+                  <p>Grid system, containers, and responsive layouts</p>
+                  <button class="os-button os-button-primary os-mt-3">View Layouts</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Utilities -->
+          <div class="os-col-md-4 os-mb-4">
+            <a href="utilities.html" class="os-nav-link">
+              <div class="os-card os-nav-card">
+                <div class="os-card-body os-text-center">
+                  <div class="os-nav-icon">🛠️</div>
+                  <h3>Utilities</h3>
+                  <p>Spacing, typography, colors, and display utilities</p>
+                  <button class="os-button os-button-primary os-mt-3">View Utilities</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Themes -->
+          <div class="os-col-md-4 os-mb-4">
+            <a href="themes.html" class="os-nav-link">
+              <div class="os-card os-nav-card">
+                <div class="os-card-body os-text-center">
+                  <div class="os-nav-icon">🎭</div>
+                  <h3>Themes</h3>
+                  <p>Light and dark themes with cosmic inspiration</p>
+                  <button class="os-button os-button-primary os-mt-3">View Themes</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Branding -->
+          <div class="os-col-md-4 os-mb-4">
+            <a href="branding.html" class="os-nav-link">
+              <div class="os-card os-nav-card">
+                <div class="os-card-body os-text-center">
+                  <div class="os-nav-icon">🌠</div>
+                  <h3>Branding</h3>
+                  <p>Logos, colors, and branding guidelines</p>
+                  <button class="os-button os-button-primary os-mt-3">View Branding</button>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Preview Section -->
+    <section class="os-section os-cosmic-bg" id="components">
+      <div class="os-container">
+        <div class="os-section-title">
+          <h2 style="color: white">Cosmic Components</h2>
+          <p style="color: rgba(255, 255, 255, 0.8)">Beautiful UI components with a distinctive cosmic aesthetic</p>
+        </div>
+
+        <div class="os-row os-mt-5">
+          <!-- Buttons -->
+          <div class="os-col-md-6 os-mb-4">
+            <div class="os-card">
+              <div class="os-card-header">
+                <h3>Buttons</h3>
+              </div>
+              <div class="os-card-body">
+                <button class="os-button os-button-primary os-mr-2 os-mb-2">Primary</button>
+                <button class="os-button os-button-secondary os-mr-2 os-mb-2">Secondary</button>
+                <button class="os-button os-button-success os-mr-2 os-mb-2">Success</button>
+                <button class="os-button os-button-danger os-mr-2 os-mb-2">Danger</button>
+                <button class="os-button os-button-cosmic os-mr-2 os-mb-2">Cosmic</button>
+                <button class="os-button os-button-outline-primary os-mr-2 os-mb-2">Outline</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards -->
+          <div class="os-col-md-6 os-mb-4">
+            <div class="os-card">
+              <div class="os-card-header">
+                <h3>Cards</h3>
+              </div>
+              <div class="os-card-body">
+                <div class="os-row">
+                  <div class="os-col-6">
+                    <div class="os-card os-card-primary os-mb-3">
+                      <div class="os-card-body">
+                        <h5 class="os-card-title">Primary Card</h5>
+                        <p class="os-card-text">Cosmic gradient background</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="os-col-6">
+                    <div class="os-card os-card-cosmic">
+                      <div class="os-card-body">
+                        <h5 class="os-card-title">Cosmic Card</h5>
+                        <p class="os-card-text">With cosmic glow effect</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navbar -->
+          <div class="os-col-12 os-mb-4">
+            <div class="os-card">
+              <div class="os-card-header">
+                <h3>Navbar</h3>
+              </div>
+              <div class="os-card-body">
+                <nav class="os-navbar os-navbar-primary os-mb-3">
+                  <div class="os-navbar-brand">
+                    <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" style="height: 40px" />
+                  </div>
+                  <div class="os-navbar-nav">
+                    <a href="#" class="os-nav-link os-active">Home</a>
+                    <a href="#" class="os-nav-link">Features</a>
+                    <a href="#" class="os-nav-link">Pricing</a>
+                    <a href="#" class="os-nav-link">About</a>
+                  </div>
+                </nav>
+
+                <nav class="os-navbar os-navbar-dark">
+                  <div class="os-navbar-brand">
+                    <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" style="height: 40px" />
+                  </div>
+                  <div class="os-navbar-nav">
+                    <a href="#" class="os-nav-link os-active">Home</a>
+                    <a href="#" class="os-nav-link">Features</a>
+                    <a href="#" class="os-nav-link">Pricing</a>
+                    <a href="#" class="os-nav-link">About</a>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="os-section">
+      <div class="os-container os-text-center">
+        <h2 class="os-mb-4">Ready to Try OrionSky UI?</h2>
+        <p class="os-mb-5" style="max-width: 700px; margin-left: auto; margin-right: auto">Start building beautiful, cosmic-inspired interfaces with our modern UI library.</p>
+        <a href="https://github.com/orionsky-ui/orionsky-ui" class="os-button os-button-cosmic os-button-lg">Get Started</a>
+      </div>
+    </section>
+
+    <footer class="os-footer">
+      <div class="os-container">
+        <div class="os-footer-content">
+          <p class="os-footer-text">© 2023 OrionSky UI. All rights reserved.</p>
+          <ul class="os-footer-links">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Examples</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../dist/orionsky-ui.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize OrionSky UI
+        if (typeof OrionSky !== "undefined") {
+          OrionSky.init();
+        }
+
+        // Create stars in the hero section
+        const hero = document.querySelector(".os-hero");
+        for (let i = 0; i < 50; i++) {
+          const star = document.createElement("div");
+          star.classList.add("star");
+
+          // Random size between 1-3px
+          const size = Math.random() * 2 + 1;
+          star.style.width = `${size}px`;
+          star.style.height = `${size}px`;
+
+          // Random position
+          star.style.left = `${Math.random() * 100}%`;
+          star.style.top = `${Math.random() * 100}%`;
+
+          // Random animation delay
+          star.style.animationDelay = `${Math.random() * 4}s`;
+
+          hero.appendChild(star);
+        }
+      });
+    </script>
+  </body>
+</html>

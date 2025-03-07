@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OrionSky UI - Component Test</title>
+    <title>OrionSky UI - Components</title>
     <link rel="stylesheet" href="../dist/orionsky-ui.css" />
     <style>
       .test-section {
@@ -13,6 +13,7 @@
       }
       .test-title {
         margin-bottom: 1rem;
+        color: var(--os-primary-color);
       }
       .test-description {
         margin-bottom: 1.5rem;
@@ -22,9 +23,14 @@
         border: 1px solid var(--os-border-color);
         border-radius: var(--os-border-radius);
         margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+      .component-demo:hover {
+        box-shadow: var(--os-box-shadow-cosmic);
+        border-color: var(--os-primary-color);
       }
       .code-example {
-        background-color: #f8f9fa;
+        background-color: var(--os-light-color);
         padding: 1rem;
         border-radius: var(--os-border-radius);
         margin-bottom: 1rem;
@@ -36,13 +42,83 @@
         right: 1rem;
         z-index: 1000;
       }
+      .os-logo {
+        height: 40px;
+        margin-right: 1rem;
+      }
+      .os-logo-icon {
+        height: 30px;
+        margin-right: 0.5rem;
+      }
+      .header-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+      .page-header {
+        background: linear-gradient(135deg, rgba(62, 100, 255, 0.1) 0%, rgba(94, 223, 255, 0.1) 100%);
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+      }
+      .back-to-demo {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+      /* Cosmic section title */
+      .cosmic-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+      .cosmic-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--os-primary-color), var(--os-secondary-color));
+        border-radius: 2px;
+      }
+      /* Dark mode adjustments */
+      [data-theme="dark"] .code-example {
+        background-color: #1a1a1a;
+      }
     </style>
   </head>
   <body>
-    <button class="os-button os-button-primary os-theme-toggle theme-toggle">Toggle Theme</button>
+    <button class="os-button os-button-cosmic theme-toggle os-theme-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+      </svg>
+    </button>
+
+    <a href="demo.html" class="os-button os-button-primary back-to-demo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"></path>
+      </svg>
+      Back to Demo
+    </a>
+
+    <div class="page-header">
+      <div class="os-container">
+        <div class="header-logo">
+          <img src="../assets/branding/orionsky-logo.svg" alt="OrionSky UI" class="os-logo logo-light" />
+          <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" class="os-logo logo-dark" />
+          <h1>Components</h1>
+        </div>
+        <p class="os-lead">Explore the OrionSky UI components with cosmic-inspired design elements.</p>
+      </div>
+    </div>
 
     <div class="os-container">
       <header class="test-section">
+        <div class="header-logo">
+          <img src="../assets/branding/orionsky-logo.svg" alt="OrionSky UI" class="os-logo logo-light" />
+          <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" class="os-logo logo-dark" />
+        </div>
         <h1>OrionSky UI Component Test</h1>
         <p>This page displays all OrionSky UI components for testing and development purposes.</p>
       </header>
@@ -355,7 +431,26 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Initialize OrionSky UI
-        OrionSky.init();
+        if (typeof OrionSky !== "undefined") {
+          OrionSky.init();
+        }
+
+        // Theme toggle functionality
+        const themeToggle = document.querySelector(".os-theme-toggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", function () {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("os-theme", newTheme);
+          });
+        }
+
+        // Set initial theme from localStorage
+        const savedTheme = localStorage.getItem("os-theme");
+        if (savedTheme) {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
       });
     </script>
   </body>

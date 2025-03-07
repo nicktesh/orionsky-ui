@@ -7,6 +7,9 @@
  * Licensed under MIT
  */
 
+// Import the logo switcher utility
+import LogoSwitcher from "./utilities/logo-switcher.js";
+
 // OrionSky UI main module
 const OrionSky = (function () {
   "use strict";
@@ -38,6 +41,21 @@ const OrionSky = (function () {
     const newTheme = currentTheme === "light" ? "dark" : "light";
     _setTheme(newTheme);
     return newTheme;
+  };
+
+  // Initialize theme and logo switching
+  const _initTheme = function () {
+    // Apply initial theme from localStorage
+    const savedTheme = localStorage.getItem("os-theme");
+    if (savedTheme) {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+
+    // Initialize logo switcher
+    LogoSwitcher.initLogoSwitcher();
+
+    // Replace any logo placeholders
+    LogoSwitcher.replacePlaceholdersWithThemeAwareLogos();
   };
 
   // Initialize components
@@ -219,6 +237,7 @@ const OrionSky = (function () {
   return {
     // Initialize all components
     init: function () {
+      _initTheme();
       _initThemeToggle();
       _initDropdowns();
       _initCollapse();
@@ -238,6 +257,9 @@ const OrionSky = (function () {
 
     // Version info
     version: VERSION,
+
+    // Expose logo switcher for direct use
+    logoSwitcher: LogoSwitcher,
   };
 })();
 

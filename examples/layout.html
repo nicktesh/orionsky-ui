@@ -41,14 +41,23 @@
           margin-left: 280px;
         }
       }
+      [data-theme="dark"] .logo-light {
+        display: none;
+      }
+      [data-theme="light"] .logo-dark {
+        display: none;
+      }
+      .os-logo {
+        height: 30px;
+        margin-right: 0.5rem;
+      }
     </style>
   </head>
   <body>
     <!-- Navbar -->
     <nav class="os-navbar os-navbar-primary">
       <div class="os-navbar-brand">
-        <img src="https://via.placeholder.com/30" alt="Logo" />
-        <span>OrionSky UI</span>
+        <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" style="height: 40px" />
       </div>
       <button class="os-navbar-toggler" id="sidebar-toggle">
         <span>☰</span>
@@ -79,8 +88,8 @@
       <aside class="os-sidebar" id="main-sidebar">
         <div class="os-sidebar-header">
           <div class="os-sidebar-brand">
-            <img src="https://via.placeholder.com/30" alt="Logo" />
-            <span>OrionSky UI</span>
+            <img src="../assets/branding/orionsky-logo.svg" alt="OrionSky UI" class="logo-light" style="height: 30px" />
+            <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" class="logo-dark" style="height: 30px" />
           </div>
           <button class="os-sidebar-close" id="sidebar-close">×</button>
         </div>
@@ -136,7 +145,11 @@
       <div class="page-content">
         <div class="content-wrapper">
           <div class="os-container-fluid">
-            <h1>Dashboard</h1>
+            <div class="os-d-flex os-align-items-center os-mb-4">
+              <img src="../assets/branding/orionsky-logo.svg" alt="OrionSky UI" class="os-logo logo-light" style="height: 40px" />
+              <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" class="os-logo logo-dark" style="height: 40px" />
+              <h1 class="os-mb-0 os-ml-3">Dashboard</h1>
+            </div>
             <p>Welcome to the OrionSky UI dashboard example.</p>
 
             <div class="os-row">

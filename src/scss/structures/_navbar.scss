@@ -9,21 +9,26 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: var(--os-navbar-padding-y, 0.5rem) var(--os-navbar-padding-x, 1rem);
+  transition: var(--os-transition-base);
 
   // Color variants
   &.os-navbar-light {
-    background-color: var(--os-white-color);
+    background-color: var(--os-navbar-light-bg, var(--os-white-color));
+    color: var(--os-body-color);
+    box-shadow: var(--os-box-shadow-sm);
   }
 
   &.os-navbar-dark {
-    background-color: var(--os-dark-color);
+    background-color: var(--os-navbar-dark-bg, var(--os-dark-color));
     color: var(--os-white-color);
+    box-shadow: var(--os-navbar-shadow, var(--os-box-shadow-sm));
   }
 
   &.os-navbar-primary {
-    background-color: var(--os-primary-color);
+    background: var(--os-navbar-primary-bg, var(--os-primary-color));
     color: var(--os-white-color);
+    box-shadow: var(--os-box-shadow-cosmic, var(--os-box-shadow));
   }
 }
 
@@ -34,10 +39,11 @@
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: var(--os-font-weight-bold);
   line-height: inherit;
   white-space: nowrap;
   text-decoration: none;
+  transition: var(--os-transition-base);
 
   .os-navbar-light & {
     color: var(--os-dark-color);
@@ -45,6 +51,7 @@
     &:hover,
     &:focus {
       color: var(--os-primary-color);
+      transform: translateY(-1px);
     }
   }
 
@@ -54,13 +61,15 @@
 
     &:hover,
     &:focus {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.9);
+      transform: translateY(-1px);
     }
   }
 
   img {
-    max-height: 30px;
+    max-height: 40px;
     margin-right: 0.5rem;
+    transition: var(--os-transition-base);
   }
 }
 
@@ -92,6 +101,8 @@
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
+  border-radius: var(--os-border-radius);
+  transition: var(--os-transition-base);
 
   .os-navbar-light & {
     color: var(--os-dark-color);
@@ -99,11 +110,13 @@
     &:hover,
     &:focus {
       color: var(--os-primary-color);
+      background-color: rgba(62, 100, 255, 0.05);
     }
 
     &.active {
       color: var(--os-primary-color);
-      font-weight: 600;
+      font-weight: var(--os-font-weight-medium);
+      background-color: rgba(62, 100, 255, 0.1);
     }
 
     &.disabled {
@@ -113,16 +126,18 @@
 
   .os-navbar-dark &,
   .os-navbar-primary & {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
 
     &:hover,
     &:focus {
       color: var(--os-white-color);
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     &.active {
       color: var(--os-white-color);
-      font-weight: 600;
+      font-weight: var(--os-font-weight-medium);
+      background-color: rgba(255, 255, 255, 0.15);
     }
 
     &.disabled {
@@ -138,6 +153,7 @@
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: var(--os-border-radius);
+  transition: var(--os-transition-base);
 
   .os-navbar-light & {
     color: var(--os-dark-color);
@@ -193,4 +209,20 @@
   .os-navbar-primary & {
     color: rgba(255, 255, 255, 0.8);
   }
+}
+
+// Sticky navbar
+.os-navbar-sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+// Fixed navbar
+.os-navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }

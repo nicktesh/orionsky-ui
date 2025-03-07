@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrionSky UI - Utilities</title>
+    <link rel="stylesheet" href="../dist/orionsky-ui.css" />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        min-height: 100vh;
+      }
+      .test-section {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--os-border-color);
+      }
+      .test-title {
+        margin-bottom: 1rem;
+        color: var(--os-primary-color);
+      }
+      .test-description {
+        margin-bottom: 1.5rem;
+      }
+      .utility-demo {
+        padding: 1.5rem;
+        border: 1px solid var(--os-border-color);
+        border-radius: var(--os-border-radius);
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+      .utility-demo:hover {
+        box-shadow: var(--os-box-shadow-cosmic);
+        border-color: var(--os-primary-color);
+      }
+      .code-example {
+        background-color: var(--os-light-color);
+        padding: 1rem;
+        border-radius: var(--os-border-radius);
+        margin-bottom: 1rem;
+        overflow: auto;
+      }
+      .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+      .back-to-demo {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+      .page-header {
+        background: linear-gradient(135deg, rgba(62, 100, 255, 0.1) 0%, rgba(94, 223, 255, 0.1) 100%);
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+      }
+      .os-logo {
+        height: 40px;
+        margin-right: 1rem;
+      }
+      .header-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+      /* Cosmic section title */
+      .cosmic-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+      .cosmic-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--os-primary-color), var(--os-secondary-color));
+        border-radius: 2px;
+      }
+      /* Dark mode adjustments */
+      [data-theme="dark"] .code-example {
+        background-color: #1a1a1a;
+      }
+      .color-swatch {
+        width: 100%;
+        height: 80px;
+        border-radius: var(--os-border-radius);
+        margin-bottom: 0.5rem;
+      }
+      .swatch-name {
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+      .swatch-value {
+        font-size: 0.75rem;
+        font-family: var(--os-font-family-monospace);
+        color: var(--os-text-muted-color);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="os-button os-button-cosmic theme-toggle os-theme-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+      </svg>
+    </button>
+
+    <a href="demo.html" class="os-button os-button-primary back-to-demo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"></path>
+      </svg>
+      Back to Demo
+    </a>
+
+    <div class="page-header">
+      <div class="os-container">
+        <div class="header-logo">
+          <img src="../assets/branding/orionsky-logo.svg" alt="OrionSky UI" class="os-logo logo-light" />
+          <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" class="os-logo logo-dark" />
+          <h1>Utilities</h1>
+        </div>
+        <p class="os-lead">Explore the OrionSky UI utility classes with cosmic-inspired design elements.</p>
+      </div>
+    </div>
+
+    <div class="os-container">
+      <!-- Colors Section -->
+      <section class="test-section" id="colors">
+        <h2 class="test-title cosmic-title">Colors</h2>
+        <p class="test-description">OrionSky UI provides a cosmic-inspired color palette with utility classes for text, backgrounds, and borders.</p>
+
+        <h3>Text Colors</h3>
+        <div class="utility-demo">
+          <p class="os-text-primary">Primary text color</p>
+          <p class="os-text-secondary">Secondary text color</p>
+          <p class="os-text-success">Success text color</p>
+          <p class="os-text-danger">Danger text color</p>
+          <p class="os-text-warning">Warning text color</p>
+          <p class="os-text-info">Info text color</p>
+          <p class="os-text-muted">Muted text color</p>
+        </div>
+
+        <h3>Background Colors</h3>
+        <div class="utility-demo">
+          <div class="os-row">
+            <div class="os-col-md-2 os-col-4 os-mb-3">
+              <div class="color-swatch os-bg-primary"></div>
+              <div class="swatch-name">Primary</div>
+              <div class="swatch-value">--os-primary-color</div>
+            </div>
+            <div class="os-col-md-2 os-col-4 os-mb-3">
+              <div class="color-swatch os-bg-secondary"></div>
+              <div class="swatch-name">Secondary</div>
+              <div class="swatch-value">--os-secondary-color</div>
+            </div>
+            <div class="os-col-md-2 os-col-4 os-mb-3">
+              <div class="color-swatch os-bg-success"></div>
+              <div class="swatch-name">Success</div>
+              <div class="swatch-value">--os-success-color</div>
+            </div>
+            <div class="os-col-md-2 os-col-4 os-mb-3">
+              <div class="color-swatch os-bg-danger"></div>
+              <div class="swatch-name">Danger</div>
+              <div class="swatch-value">--os-danger-color</div>
+            </div>
+            <div class="os-col-md-2 os-col-4 os-mb-3">
+              <div class="color-swatch os-bg-warning"></div>
+              <div class="swatch-name">Warning</div>
+              <div class="swatch-value">--os-warning-color</div>
+            </div>
+            <div class="os-col-md-2 os-col-4 os-mb-3">
+              <div class="color-swatch os-bg-info"></div>
+              <div class="swatch-name">Info</div>
+              <div class="swatch-value">--os-info-color</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typography Section -->
+      <section class="test-section" id="typography">
+        <h2 class="test-title cosmic-title">Typography</h2>
+        <p class="test-description">OrionSky UI provides utility classes for text styling and formatting.</p>
+
+        <h3>Font Sizes</h3>
+        <div class="utility-demo">
+          <p class="os-text-xs">Extra Small Text (.os-text-xs)</p>
+          <p class="os-text-sm">Small Text (.os-text-sm)</p>
+          <p class="os-text-base">Base Text (.os-text-base)</p>
+          <p class="os-text-lg">Large Text (.os-text-lg)</p>
+          <p class="os-text-xl">Extra Large Text (.os-text-xl)</p>
+          <p class="os-text-2xl">2XL Text (.os-text-2xl)</p>
+          <p class="os-text-3xl">3XL Text (.os-text-3xl)</p>
+        </div>
+
+        <h3>Font Weights</h3>
+        <div class="utility-demo">
+          <p class="os-font-weight-light">Light Text (.os-font-weight-light)</p>
+          <p class="os-font-weight-normal">Normal Text (.os-font-weight-normal)</p>
+          <p class="os-font-weight-bold">Bold Text (.os-font-weight-bold)</p>
+        </div>
+
+        <h3>Text Alignment</h3>
+        <div class="utility-demo">
+          <p class="os-text-left">Left aligned text (.os-text-left)</p>
+          <p class="os-text-center">Center aligned text (.os-text-center)</p>
+          <p class="os-text-right">Right aligned text (.os-text-right)</p>
+        </div>
+      </section>
+
+      <!-- Spacing Section -->
+      <section class="test-section" id="spacing">
+        <h2 class="test-title cosmic-title">Spacing</h2>
+        <p class="test-description">OrionSky UI provides utility classes for margin and padding.</p>
+
+        <h3>Margin</h3>
+        <div class="utility-demo">
+          <div class="os-bg-primary os-mb-1" style="height: 20px"></div>
+          <p class="os-text-sm os-mb-3">Margin Bottom 1 (.os-mb-1)</p>
+
+          <div class="os-bg-primary os-mb-2" style="height: 20px"></div>
+          <p class="os-text-sm os-mb-3">Margin Bottom 2 (.os-mb-2)</p>
+
+          <div class="os-bg-primary os-mb-3" style="height: 20px"></div>
+          <p class="os-text-sm os-mb-3">Margin Bottom 3 (.os-mb-3)</p>
+
+          <div class="os-bg-primary os-mb-4" style="height: 20px"></div>
+          <p class="os-text-sm os-mb-3">Margin Bottom 4 (.os-mb-4)</p>
+
+          <div class="os-bg-primary os-mb-5" style="height: 20px"></div>
+          <p class="os-text-sm">Margin Bottom 5 (.os-mb-5)</p>
+        </div>
+
+        <h3>Padding</h3>
+        <div class="utility-demo">
+          <div class="os-bg-light os-mb-3">
+            <div class="os-bg-primary os-p-1" style="color: white">Padding 1 (.os-p-1)</div>
+          </div>
+
+          <div class="os-bg-light os-mb-3">
+            <div class="os-bg-primary os-p-2" style="color: white">Padding 2 (.os-p-2)</div>
+          </div>
+
+          <div class="os-bg-light os-mb-3">
+            <div class="os-bg-primary os-p-3" style="color: white">Padding 3 (.os-p-3)</div>
+          </div>
+
+          <div class="os-bg-light os-mb-3">
+            <div class="os-bg-primary os-p-4" style="color: white">Padding 4 (.os-p-4)</div>
+          </div>
+
+          <div class="os-bg-light">
+            <div class="os-bg-primary os-p-5" style="color: white">Padding 5 (.os-p-5)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Display Section -->
+      <section class="test-section" id="display">
+        <h2 class="test-title cosmic-title">Display</h2>
+        <p class="test-description">OrionSky UI provides utility classes for controlling the display property of elements.</p>
+
+        <div class="utility-demo">
+          <div class="os-d-inline os-bg-primary os-p-2 os-mb-3" style="color: white">Inline (.os-d-inline)</div>
+          <div class="os-d-inline os-bg-secondary os-p-2 os-mb-3" style="color: white">Inline (.os-d-inline)</div>
+
+          <div class="os-d-block os-bg-success os-p-2 os-mb-3" style="color: white">Block (.os-d-block)</div>
+          <div class="os-d-block os-bg-danger os-p-2 os-mb-3" style="color: white">Block (.os-d-block)</div>
+
+          <div class="os-d-flex os-mb-3">
+            <div class="os-bg-info os-p-2" style="color: white">Flex Item</div>
+            <div class="os-bg-warning os-p-2" style="color: white">Flex Item</div>
+            <div class="os-bg-primary os-p-2" style="color: white">Flex Item</div>
+          </div>
+
+          <p class="os-mb-2">Hidden on small screens (.os-d-none .os-d-md-block):</p>
+          <div class="os-d-none os-d-md-block os-bg-primary os-p-2" style="color: white">This is hidden on small screens</div>
+        </div>
+      </section>
+    </div>
+
+    <script src="../dist/orionsky-ui.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize OrionSky UI
+        if (typeof OrionSky !== "undefined") {
+          OrionSky.init();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrionSky UI - Branding</title>
+    <link rel="stylesheet" href="../dist/orionsky-ui.css" />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        min-height: 100vh;
+      }
+      .test-section {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--os-border-color);
+      }
+      .test-title {
+        margin-bottom: 1rem;
+        color: var(--os-primary-color);
+      }
+      .test-description {
+        margin-bottom: 1.5rem;
+      }
+      .branding-demo {
+        padding: 1.5rem;
+        border: 1px solid var(--os-border-color);
+        border-radius: var(--os-border-radius);
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+      .branding-demo:hover {
+        box-shadow: var(--os-box-shadow-cosmic);
+        border-color: var(--os-primary-color);
+      }
+      .code-example {
+        background-color: var(--os-light-color);
+        padding: 1rem;
+        border-radius: var(--os-border-radius);
+        margin-bottom: 1rem;
+        overflow: auto;
+      }
+      .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+      .back-to-demo {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+      .page-header {
+        background: linear-gradient(135deg, rgba(62, 100, 255, 0.1) 0%, rgba(94, 223, 255, 0.1) 100%);
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+      }
+      .os-logo {
+        height: 40px;
+        margin-right: 1rem;
+      }
+      .header-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+      /* Cosmic section title */
+      .cosmic-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+      .cosmic-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--os-primary-color), var(--os-secondary-color));
+        border-radius: 2px;
+      }
+      /* Dark mode adjustments */
+      [data-theme="dark"] .code-example {
+        background-color: #1a1a1a;
+      }
+      .color-swatch {
+        width: 100%;
+        height: 80px;
+        border-radius: var(--os-border-radius);
+        margin-bottom: 0.5rem;
+      }
+      .swatch-name {
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+      .swatch-value {
+        font-size: 0.75rem;
+        font-family: var(--os-font-family-monospace);
+        color: var(--os-text-muted-color);
+      }
+      .logo-showcase {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      .logo-item {
+        flex: 1;
+        min-width: 250px;
+        padding: 1.5rem;
+        border: 1px solid var(--os-border-color);
+        border-radius: var(--os-border-radius);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      .logo-item:hover {
+        box-shadow: var(--os-box-shadow-cosmic);
+        border-color: var(--os-primary-color);
+      }
+      .logo-item img {
+        max-width: 100%;
+        margin-bottom: 1rem;
+      }
+      .logo-item h4 {
+        margin-bottom: 0.5rem;
+      }
+      .logo-item p {
+        color: var(--os-text-muted-color);
+        font-size: 0.875rem;
+      }
+      .logo-dark-bg {
+        background-color: #121212;
+        padding: 1.5rem;
+        border-radius: var(--os-border-radius);
+      }
+      .logo-light-bg {
+        background-color: #ffffff;
+        padding: 1.5rem;
+        border-radius: var(--os-border-radius);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="os-button os-button-cosmic theme-toggle os-theme-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+      </svg>
+    </button>
+
+    <a href="demo.html" class="os-button os-button-primary back-to-demo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"></path>
+      </svg>
+      Back to Demo
+    </a>
+
+    <div class="page-header">
+      <div class="os-container">
+        <div class="header-logo">
+          <img src="../assets/branding/orionsky-logo.svg" alt="OrionSky UI" class="os-logo logo-light" />
+          <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" class="os-logo logo-dark" />
+          <h1>Branding</h1>
+        </div>
+        <p class="os-lead">Explore the OrionSky UI branding assets and guidelines.</p>
+      </div>
+    </div>
+
+    <div class="os-container">
+      <!-- Logo Section -->
+      <section class="test-section" id="logos">
+        <h2 class="test-title cosmic-title">Logos</h2>
+        <p class="test-description">OrionSky UI provides a set of logo assets for use in your applications.</p>
+
+        <h3>Full Logos</h3>
+        <div class="logo-showcase">
+          <div class="logo-item">
+            <div class="logo-light-bg">
+              <img src="../assets/branding/orionsky-logo.svg" alt="OrionSky UI Logo (Light)" style="height: 60px" />
+            </div>
+            <h4>Light Background Logo</h4>
+            <p>Use on light backgrounds</p>
+            <code>orionsky-logo.svg</code>
+          </div>
+          <div class="logo-item">
+            <div class="logo-dark-bg">
+              <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI Logo (Dark)" style="height: 60px" />
+            </div>
+            <h4>Dark Background Logo</h4>
+            <p>Use on dark backgrounds</p>
+            <code>orionsky-logo-dark.svg</code>
+          </div>
+        </div>
+
+        <h3>Icon Logos</h3>
+        <div class="logo-showcase">
+          <div class="logo-item">
+            <div class="logo-light-bg">
+              <img src="../assets/branding/orionsky-icon.svg" alt="OrionSky UI Icon (Light)" style="height: 60px" />
+            </div>
+            <h4>Light Background Icon</h4>
+            <p>Use on light backgrounds</p>
+            <code>orionsky-icon.svg</code>
+          </div>
+          <div class="logo-item">
+            <div class="logo-dark-bg">
+              <img src="../assets/branding/orionsky-icon-dark.svg" alt="OrionSky UI Icon (Dark)" style="height: 60px" />
+            </div>
+            <h4>Dark Background Icon</h4>
+            <p>Use on dark backgrounds</p>
+            <code>orionsky-icon-dark.svg</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand Colors Section -->
+      <section class="test-section" id="brand-colors">
+        <h2 class="test-title cosmic-title">Brand Colors</h2>
+        <p class="test-description">The OrionSky UI brand uses a cosmic-inspired color palette.</p>
+
+        <div class="branding-demo">
+          <div class="os-row">
+            <div class="os-col-md-3 os-col-6 os-mb-3">
+              <div class="color-swatch" style="background-color: #3e64ff"></div>
+              <div class="swatch-name">Primary Blue</div>
+              <div class="swatch-value">#3e64ff</div>
+            </div>
+            <div class="os-col-md-3 os-col-6 os-mb-3">
+              <div class="color-swatch" style="background-color: #5edfff"></div>
+              <div class="swatch-name">Secondary Blue</div>
+              <div class="swatch-value">#5edfff</div>
+            </div>
+            <div class="os-col-md-3 os-col-6 os-mb-3">
+              <div class="color-swatch" style="background-color: #343a40"></div>
+              <div class="swatch-name">Dark Gray</div>
+              <div class="swatch-value">#343a40</div>
+            </div>
+            <div class="os-col-md-3 os-col-6 os-mb-3">
+              <div class="color-swatch" style="background-color: #f8f9fa"></div>
+              <div class="swatch-name">Light Gray</div>
+              <div class="swatch-value">#f8f9fa</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Logo Usage Section -->
+      <section class="test-section" id="logo-usage">
+        <h2 class="test-title cosmic-title">Logo Usage</h2>
+        <p class="test-description">Guidelines for using the OrionSky UI logo in your applications.</p>
+
+        <h3>Basic Implementation</h3>
+        <div class="branding-demo">
+          <p>Use the appropriate logo version based on the background color:</p>
+          <div class="code-example">
+            <pre><code>&lt;!-- Full logo on light background --&gt;
+&lt;img src="../assets/branding/orionsky-logo.svg" alt="OrionSky UI" /&gt;
+
+&lt;!-- Full logo on dark background --&gt;
+&lt;img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" /&gt;
+
+&lt;!-- Icon only on light background --&gt;
+&lt;img src="../assets/branding/orionsky-icon.svg" alt="OrionSky UI" /&gt;
+
+&lt;!-- Icon only on dark background --&gt;
+&lt;img src="../assets/branding/orionsky-icon-dark.svg" alt="OrionSky UI" /&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3>Theme-Aware Implementation</h3>
+        <div class="branding-demo">
+          <p>To automatically switch between light and dark logos based on the theme:</p>
+          <div class="code-example">
+            <pre><code>&lt;!-- Theme-aware full logo --&gt;
+&lt;img src="../assets/branding/orionsky-logo.svg" alt="OrionSky UI" class="logo-light" /&gt;
+&lt;img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" class="logo-dark" /&gt;
+
+&lt;!-- CSS to show/hide based on theme --&gt;
+&lt;style&gt;
+[data-theme="dark"] .logo-light {
+  display: none;
+}
+[data-theme="light"] .logo-dark {
+  display: none;
+}
+&lt;/style&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3>Logo Sizing</h3>
+        <div class="branding-demo">
+          <p>Recommended logo sizes:</p>
+          <ul>
+            <li>Navbar/Header: 40px height</li>
+            <li>Sidebar: 30px height</li>
+            <li>Footer: 24px height</li>
+            <li>Minimum size for the full logo: 120px wide</li>
+            <li>Minimum size for the icon: 24px × 24px</li>
+          </ul>
+          <p>Always maintain the aspect ratio when resizing.</p>
+        </div>
+      </section>
+
+      <!-- Typography Section -->
+      <section class="test-section" id="typography">
+        <h2 class="test-title cosmic-title">Typography</h2>
+        <p class="test-description">OrionSky UI uses the Inter font family as its primary typeface.</p>
+
+        <div class="branding-demo">
+          <h3 style="font-family: var(--os-font-family)">Inter Font Family</h3>
+          <p style="font-family: var(--os-font-family)">The Inter font is a variable font designed for computer screens. It features a tall x-height to aid in readability of mixed-case and lower-case text.</p>
+
+          <h4>Font Weights</h4>
+          <p style="font-family: var(--os-font-family); font-weight: 300">Light (300): The quick brown fox jumps over the lazy dog.</p>
+          <p style="font-family: var(--os-font-family); font-weight: 400">Regular (400): The quick brown fox jumps over the lazy dog.</p>
+          <p style="font-family: var(--os-font-family); font-weight: 500">Medium (500): The quick brown fox jumps over the lazy dog.</p>
+          <p style="font-family: var(--os-font-family); font-weight: 700">Bold (700): The quick brown fox jumps over the lazy dog.</p>
+        </div>
+      </section>
+    </div>
+
+    <script src="../dist/orionsky-ui.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize OrionSky UI
+        if (typeof OrionSky !== "undefined") {
+          OrionSky.init();
+        }
+      });
+    </script>
+  </body>
+</html>

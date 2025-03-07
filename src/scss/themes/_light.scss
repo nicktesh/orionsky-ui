@@ -2,13 +2,15 @@
 // Default light theme variables
 
 :root {
-  // Colors
-  --os-primary-color: #3e64ff;
-  --os-secondary-color: #6c757d;
-  --os-success-color: #28a745;
-  --os-danger-color: #dc3545;
-  --os-warning-color: #ffc107;
-  --os-info-color: #17a2b8;
+  // Primary Colors - Cosmic-inspired palette
+  --os-primary-color: #3e64ff; // Bright blue like a young star
+  --os-secondary-color: #5edfff; // Cosmic nebula blue
+  --os-success-color: #2ecc71; // Vibrant cosmic green
+  --os-danger-color: #e74c3c; // Supernova red
+  --os-warning-color: #f39c12; // Cosmic amber
+  --os-info-color: #3498db; // Celestial blue
+
+  // Neutral Colors
   --os-light-color: #f8f9fa;
   --os-dark-color: #343a40;
   --os-white-color: #ffffff;
@@ -20,30 +22,41 @@
 
   // Background
   --os-body-bg: #ffffff;
+  --os-card-bg: #ffffff;
+  --os-navbar-light-bg: rgba(255, 255, 255, 0.95);
+  --os-navbar-dark-bg: #1e2a3a; // Deep space dark blue
+  --os-navbar-primary-bg: linear-gradient(135deg, #3e64ff 0%, #5a7bff 100%); // Cosmic gradient
 
   // Borders
   --os-border-color: #dee2e6;
-  --os-border-radius: 0.25rem;
-  --os-border-radius-lg: 0.5rem;
-  --os-border-radius-sm: 0.2rem;
+  --os-border-radius: 0.5rem; // More rounded corners for a modern look
+  --os-border-radius-lg: 0.75rem;
+  --os-border-radius-sm: 0.375rem;
+  --os-border-radius-pill: 50rem;
 
-  // Shadows
-  --os-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  --os-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --os-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  // Shadows - More pronounced for depth
+  --os-box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+  --os-box-shadow-sm: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.05);
+  --os-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+  --os-box-shadow-cosmic: 0 0.5rem 1.5rem rgba(62, 100, 255, 0.15); // Cosmic glow effect
 
   // Focus
   --os-focus-ring-color: rgba(62, 100, 255, 0.25);
+  --os-focus-ring-width: 0.25rem;
 
   // Transitions
   --os-transition-base: all 0.2s ease-in-out;
+  --os-transition-fade: opacity 0.15s linear;
+  --os-transition-collapse: height 0.35s ease;
 
   // Typography
   --os-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --os-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --os-font-weight-normal: 400;
+  --os-font-weight-medium: 500;
   --os-font-weight-bold: 700;
   --os-line-height-base: 1.5;
+  --os-letter-spacing: -0.01em;
 
   // Spacing
   --os-spacer: 1rem;
@@ -57,4 +70,24 @@
   // Grid
   --os-gutter-x: 1.5rem;
   --os-gutter-y: 1rem;
+
+  // Component-specific
+  --os-navbar-padding-y: 0.75rem;
+  --os-navbar-padding-x: 1rem;
+  --os-navbar-height: 60px;
+  --os-sidebar-width: 280px;
+  --os-sidebar-collapsed-width: 70px;
+
+  // Button styles
+  --os-button-font-weight: var(--os-font-weight-medium);
+  --os-button-border-width: 1px;
+  --os-button-padding-y: 0.5rem;
+  --os-button-padding-x: 1rem;
+  --os-button-border-radius: var(--os-border-radius);
+
+  // Card styles
+  --os-card-border-width: 1px;
+  --os-card-border-radius: var(--os-border-radius);
+  --os-card-cap-padding-y: 0.75rem;
+  --os-card-cap-padding-x: 1.25rem;
 }
