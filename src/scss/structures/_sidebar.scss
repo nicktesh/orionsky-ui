@@ -1,0 +1,130 @@
+// OrionSky UI Sidebar
+// Sidebar component styles
+
+@use "../variables" as *;
+
+.os-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  width: 280px;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: var(--os-white-color);
+  border-right: 1px solid var(--os-border-color);
+  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: calc(map-get($breakpoints, lg) - 1px)) {
+    transform: translateX(-100%);
+
+    &.show {
+      transform: translateX(0);
+    }
+  }
+}
+
+.os-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--os-border-color);
+}
+
+.os-sidebar-brand {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--os-dark-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--os-primary-color);
+    text-decoration: none;
+  }
+
+  img {
+    max-height: 32px;
+    margin-right: 0.5rem;
+  }
+}
+
+.os-sidebar-close {
+  padding: 0.25rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--os-text-muted-color);
+  background-color: transparent;
+  border: 0;
+
+  &:hover {
+    color: var(--os-danger-color);
+  }
+
+  @media (min-width: map-get($breakpoints, lg)) {
+    display: none;
+  }
+}
+
+.os-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.os-sidebar-item {
+  margin-bottom: 0.25rem;
+}
+
+.os-sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--os-dark-color);
+  text-decoration: none;
+  border-radius: var(--os-border-radius);
+
+  &:hover {
+    color: var(--os-primary-color);
+    background-color: var(--os-light-color);
+  }
+
+  &.active {
+    color: var(--os-white-color);
+    background-color: var(--os-primary-color);
+  }
+
+  &.disabled {
+    color: var(--os-text-muted-color);
+    pointer-events: none;
+    cursor: default;
+  }
+
+  i,
+  svg {
+    margin-right: 0.5rem;
+  }
+}
+
+.os-sidebar-heading {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--os-text-muted-color);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.os-sidebar-divider {
+  height: 0;
+  margin: 1rem 0;
+  border-top: 1px solid var(--os-border-color);
+}

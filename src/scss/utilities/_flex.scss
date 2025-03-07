@@ -1,0 +1,230 @@
+// OrionSky UI Flex Utilities
+// Flex utility classes for controlling flex layouts
+
+@use "../variables" as *;
+
+// Flex container
+.os-d-flex {
+  display: flex !important;
+}
+
+.os-d-inline-flex {
+  display: inline-flex !important;
+}
+
+// Flex direction
+.os-flex-row {
+  flex-direction: row !important;
+}
+
+.os-flex-column {
+  flex-direction: column !important;
+}
+
+.os-flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.os-flex-column-reverse {
+  flex-direction: column-reverse !important;
+}
+
+// Flex wrap
+.os-flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.os-flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.os-flex-wrap-reverse {
+  flex-wrap: wrap-reverse !important;
+}
+
+// Justify content
+.os-justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.os-justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.os-justify-content-center {
+  justify-content: center !important;
+}
+
+.os-justify-content-between {
+  justify-content: space-between !important;
+}
+
+.os-justify-content-around {
+  justify-content: space-around !important;
+}
+
+.os-justify-content-evenly {
+  justify-content: space-evenly !important;
+}
+
+// Align items
+.os-align-items-start {
+  align-items: flex-start !important;
+}
+
+.os-align-items-end {
+  align-items: flex-end !important;
+}
+
+.os-align-items-center {
+  align-items: center !important;
+}
+
+.os-align-items-baseline {
+  align-items: baseline !important;
+}
+
+.os-align-items-stretch {
+  align-items: stretch !important;
+}
+
+// Align content
+.os-align-content-start {
+  align-content: flex-start !important;
+}
+
+.os-align-content-end {
+  align-content: flex-end !important;
+}
+
+.os-align-content-center {
+  align-content: center !important;
+}
+
+.os-align-content-between {
+  align-content: space-between !important;
+}
+
+.os-align-content-around {
+  align-content: space-around !important;
+}
+
+.os-align-content-stretch {
+  align-content: stretch !important;
+}
+
+// Align self
+.os-align-self-auto {
+  align-self: auto !important;
+}
+
+.os-align-self-start {
+  align-self: flex-start !important;
+}
+
+.os-align-self-end {
+  align-self: flex-end !important;
+}
+
+.os-align-self-center {
+  align-self: center !important;
+}
+
+.os-align-self-baseline {
+  align-self: baseline !important;
+}
+
+.os-align-self-stretch {
+  align-self: stretch !important;
+}
+
+// Flex grow and shrink
+.os-flex-grow-0 {
+  flex-grow: 0 !important;
+}
+
+.os-flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.os-flex-shrink-0 {
+  flex-shrink: 0 !important;
+}
+
+.os-flex-shrink-1 {
+  flex-shrink: 1 !important;
+}
+
+// Flex fill
+.os-flex-fill {
+  flex: 1 1 auto !important;
+}
+
+// Responsive flex utilities
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: $width) {
+    .os-flex-#{$breakpoint}-row {
+      flex-direction: row !important;
+    }
+
+    .os-flex-#{$breakpoint}-column {
+      flex-direction: column !important;
+    }
+
+    .os-flex-#{$breakpoint}-row-reverse {
+      flex-direction: row-reverse !important;
+    }
+
+    .os-flex-#{$breakpoint}-column-reverse {
+      flex-direction: column-reverse !important;
+    }
+
+    .os-flex-#{$breakpoint}-wrap {
+      flex-wrap: wrap !important;
+    }
+
+    .os-flex-#{$breakpoint}-nowrap {
+      flex-wrap: nowrap !important;
+    }
+
+    .os-justify-content-#{$breakpoint}-start {
+      justify-content: flex-start !important;
+    }
+
+    .os-justify-content-#{$breakpoint}-end {
+      justify-content: flex-end !important;
+    }
+
+    .os-justify-content-#{$breakpoint}-center {
+      justify-content: center !important;
+    }
+
+    .os-justify-content-#{$breakpoint}-between {
+      justify-content: space-between !important;
+    }
+
+    .os-justify-content-#{$breakpoint}-around {
+      justify-content: space-around !important;
+    }
+
+    .os-align-items-#{$breakpoint}-start {
+      align-items: flex-start !important;
+    }
+
+    .os-align-items-#{$breakpoint}-end {
+      align-items: flex-end !important;
+    }
+
+    .os-align-items-#{$breakpoint}-center {
+      align-items: center !important;
+    }
+
+    .os-align-items-#{$breakpoint}-baseline {
+      align-items: baseline !important;
+    }
+
+    .os-align-items-#{$breakpoint}-stretch {
+      align-items: stretch !important;
+    }
+  }
+}

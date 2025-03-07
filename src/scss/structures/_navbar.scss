@@ -1,0 +1,196 @@
+// OrionSky UI Navbar
+// Navbar component styles
+
+@use "../variables" as *;
+
+.os-navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+
+  // Color variants
+  &.os-navbar-light {
+    background-color: var(--os-white-color);
+  }
+
+  &.os-navbar-dark {
+    background-color: var(--os-dark-color);
+    color: var(--os-white-color);
+  }
+
+  &.os-navbar-primary {
+    background-color: var(--os-primary-color);
+    color: var(--os-white-color);
+  }
+}
+
+.os-navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: inherit;
+  white-space: nowrap;
+  text-decoration: none;
+
+  .os-navbar-light & {
+    color: var(--os-dark-color);
+
+    &:hover,
+    &:focus {
+      color: var(--os-primary-color);
+    }
+  }
+
+  .os-navbar-dark &,
+  .os-navbar-primary & {
+    color: var(--os-white-color);
+
+    &:hover,
+    &:focus {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  img {
+    max-height: 30px;
+    margin-right: 0.5rem;
+  }
+}
+
+.os-navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  @media (min-width: map-get($breakpoints, md)) {
+    flex-direction: row;
+  }
+}
+
+.os-nav-item {
+  margin-bottom: 0;
+
+  @media (min-width: map-get($breakpoints, md)) {
+    margin-right: 0.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.os-nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+
+  .os-navbar-light & {
+    color: var(--os-dark-color);
+
+    &:hover,
+    &:focus {
+      color: var(--os-primary-color);
+    }
+
+    &.active {
+      color: var(--os-primary-color);
+      font-weight: 600;
+    }
+
+    &.disabled {
+      color: var(--os-text-muted-color);
+    }
+  }
+
+  .os-navbar-dark &,
+  .os-navbar-primary & {
+    color: rgba(255, 255, 255, 0.8);
+
+    &:hover,
+    &:focus {
+      color: var(--os-white-color);
+    }
+
+    &.active {
+      color: var(--os-white-color);
+      font-weight: 600;
+    }
+
+    &.disabled {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.os-navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--os-border-radius);
+
+  .os-navbar-light & {
+    color: var(--os-dark-color);
+    border-color: rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background-color: var(--os-light-color);
+    }
+  }
+
+  .os-navbar-dark &,
+  .os-navbar-primary & {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  @media (min-width: map-get($breakpoints, md)) {
+    display: none;
+  }
+}
+
+.os-navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+
+  @media (max-width: calc(map-get($breakpoints, md) - 1px)) {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  @media (min-width: map-get($breakpoints, md)) {
+    display: flex !important;
+  }
+}
+
+.os-navbar-text {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  .os-navbar-light & {
+    color: var(--os-dark-color);
+  }
+
+  .os-navbar-dark &,
+  .os-navbar-primary & {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}

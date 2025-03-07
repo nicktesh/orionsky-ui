@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrionSky UI - Component Test</title>
+    <link rel="stylesheet" href="../dist/orionsky-ui.css" />
+    <style>
+      .test-section {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--os-border-color);
+      }
+      .test-title {
+        margin-bottom: 1rem;
+      }
+      .test-description {
+        margin-bottom: 1.5rem;
+      }
+      .component-demo {
+        padding: 1.5rem;
+        border: 1px solid var(--os-border-color);
+        border-radius: var(--os-border-radius);
+        margin-bottom: 1rem;
+      }
+      .code-example {
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: var(--os-border-radius);
+        margin-bottom: 1rem;
+        overflow: auto;
+      }
+      .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="os-button os-button-primary os-theme-toggle theme-toggle">Toggle Theme</button>
+
+    <div class="os-container">
+      <header class="test-section">
+        <h1>OrionSky UI Component Test</h1>
+        <p>This page displays all OrionSky UI components for testing and development purposes.</p>
+      </header>
+
+      <!-- Buttons -->
+      <section class="test-section" id="buttons">
+        <h2 class="test-title">Buttons</h2>
+        <p class="test-description">Standard button styles and variants.</p>
+
+        <h3>Basic Buttons</h3>
+        <div class="component-demo">
+          <button class="os-button os-button-primary">Primary</button>
+          <button class="os-button os-button-secondary">Secondary</button>
+          <button class="os-button os-button-success">Success</button>
+          <button class="os-button os-button-danger">Danger</button>
+          <button class="os-button os-button-warning">Warning</button>
+          <button class="os-button os-button-info">Info</button>
+        </div>
+
+        <h3>Outline Buttons</h3>
+        <div class="component-demo">
+          <button class="os-button os-button-outline-primary">Primary</button>
+          <button class="os-button os-button-outline-secondary">Secondary</button>
+          <button class="os-button os-button-outline-success">Success</button>
+          <button class="os-button os-button-outline-danger">Danger</button>
+          <button class="os-button os-button-outline-warning">Warning</button>
+          <button class="os-button os-button-outline-info">Info</button>
+        </div>
+
+        <h3>Button Sizes</h3>
+        <div class="component-demo">
+          <button class="os-button os-button-primary os-button-sm">Small</button>
+          <button class="os-button os-button-primary">Default</button>
+          <button class="os-button os-button-primary os-button-lg">Large</button>
+        </div>
+
+        <h3>Block Button</h3>
+        <div class="component-demo">
+          <button class="os-button os-button-primary os-button-block">Block Button</button>
+        </div>
+      </section>
+
+      <!-- Grid System -->
+      <section class="test-section" id="grid">
+        <h2 class="test-title">Grid System</h2>
+        <p class="test-description">Responsive grid layout system.</p>
+
+        <h3>Basic Grid</h3>
+        <div class="component-demo">
+          <div class="os-row">
+            <div class="os-col-md-4" style="background-color: rgba(62, 100, 255, 0.2); padding: 1rem">Column 1</div>
+            <div class="os-col-md-4" style="background-color: rgba(62, 100, 255, 0.3); padding: 1rem">Column 2</div>
+            <div class="os-col-md-4" style="background-color: rgba(62, 100, 255, 0.2); padding: 1rem">Column 3</div>
+          </div>
+        </div>
+
+        <h3>Responsive Grid</h3>
+        <div class="component-demo">
+          <div class="os-row">
+            <div class="os-col-sm-12 os-col-md-6 os-col-lg-3" style="background-color: rgba(62, 100, 255, 0.2); padding: 1rem; margin-bottom: 0.5rem">Column 1</div>
+            <div class="os-col-sm-12 os-col-md-6 os-col-lg-3" style="background-color: rgba(62, 100, 255, 0.3); padding: 1rem; margin-bottom: 0.5rem">Column 2</div>
+            <div class="os-col-sm-12 os-col-md-6 os-col-lg-3" style="background-color: rgba(62, 100, 255, 0.2); padding: 1rem; margin-bottom: 0.5rem">Column 3</div>
+            <div class="os-col-sm-12 os-col-md-6 os-col-lg-3" style="background-color: rgba(62, 100, 255, 0.3); padding: 1rem; margin-bottom: 0.5rem">Column 4</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cards -->
+      <section class="test-section" id="cards">
+        <h2 class="test-title">Cards</h2>
+        <p class="test-description">Flexible content containers.</p>
+
+        <h3>Basic Card</h3>
+        <div class="component-demo">
+          <div class="os-row">
+            <div class="os-col-md-4">
+              <div class="os-card">
+                <div class="os-card-body">
+                  <h5 class="os-card-title">Card Title</h5>
+                  <p class="os-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button class="os-button os-button-primary">Go somewhere</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Card with Header and Footer</h3>
+        <div class="component-demo">
+          <div class="os-row">
+            <div class="os-col-md-4">
+              <div class="os-card">
+                <div class="os-card-header">Featured</div>
+                <div class="os-card-body">
+                  <h5 class="os-card-title">Card Title</h5>
+                  <p class="os-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button class="os-button os-button-primary">Go somewhere</button>
+                </div>
+                <div class="os-card-footer">
+                  <small>Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Card with Image</h3>
+        <div class="component-demo">
+          <div class="os-row">
+            <div class="os-col-md-4">
+              <div class="os-card">
+                <img src="https://via.placeholder.com/300x200" class="os-card-img-top" alt="Card image cap" />
+                <div class="os-card-body">
+                  <h5 class="os-card-title">Card Title</h5>
+                  <p class="os-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button class="os-button os-button-primary">Go somewhere</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Card Variants</h3>
+        <div class="component-demo">
+          <div class="os-row">
+            <div class="os-col-md-3">
+              <div class="os-card os-card-primary">
+                <div class="os-card-header">Primary Card</div>
+                <div class="os-card-body">
+                  <h5 class="os-card-title">Primary Card Title</h5>
+                  <p class="os-card-text">Some quick example text for the primary card.</p>
+                </div>
+              </div>
+            </div>
+            <div class="os-col-md-3">
+              <div class="os-card os-card-secondary">
+                <div class="os-card-header">Secondary Card</div>
+                <div class="os-card-body">
+                  <h5 class="os-card-title">Secondary Card Title</h5>
+                  <p class="os-card-text">Some quick example text for the secondary card.</p>
+                </div>
+              </div>
+            </div>
+            <div class="os-col-md-3">
+              <div class="os-card os-card-success">
+                <div class="os-card-header">Success Card</div>
+                <div class="os-card-body">
+                  <h5 class="os-card-title">Success Card Title</h5>
+                  <p class="os-card-text">Some quick example text for the success card.</p>
+                </div>
+              </div>
+            </div>
+            <div class="os-col-md-3">
+              <div class="os-card os-card-danger">
+                <div class="os-card-header">Danger Card</div>
+                <div class="os-card-body">
+                  <h5 class="os-card-title">Danger Card Title</h5>
+                  <p class="os-card-text">Some quick example text for the danger card.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Card Deck</h3>
+        <div class="component-demo">
+          <div class="os-card-deck">
+            <div class="os-card">
+              <div class="os-card-body">
+                <h5 class="os-card-title">Card 1</h5>
+                <p class="os-card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+              </div>
+            </div>
+            <div class="os-card">
+              <div class="os-card-body">
+                <h5 class="os-card-title">Card 2</h5>
+                <p class="os-card-text">This card has shorter content than the first.</p>
+              </div>
+            </div>
+            <div class="os-card">
+              <div class="os-card-body">
+                <h5 class="os-card-title">Card 3</h5>
+                <p class="os-card-text">This is another card with supporting text below as a natural lead-in to additional content.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Forms -->
+      <section class="test-section" id="forms">
+        <h2 class="test-title">Forms</h2>
+        <p class="test-description">Input controls and form layouts.</p>
+
+        <h3>Basic Form Controls</h3>
+        <div class="component-demo">
+          <form>
+            <div class="os-form-group">
+              <label for="exampleEmail" class="os-form-label">Email address</label>
+              <input type="email" class="os-form-control" id="exampleEmail" placeholder="name@example.com" />
+              <small class="os-form-text">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="os-form-group">
+              <label for="examplePassword" class="os-form-label">Password</label>
+              <input type="password" class="os-form-control" id="examplePassword" placeholder="Password" />
+            </div>
+            <div class="os-form-group">
+              <label for="exampleSelect" class="os-form-label">Example select</label>
+              <select class="os-form-control" id="exampleSelect">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="os-form-group">
+              <label for="exampleTextarea" class="os-form-label">Example textarea</label>
+              <textarea class="os-form-control" id="exampleTextarea" rows="3"></textarea>
+            </div>
+            <button type="submit" class="os-button os-button-primary">Submit</button>
+          </form>
+        </div>
+
+        <h3>Form Control Sizes</h3>
+        <div class="component-demo">
+          <div class="os-form-group">
+            <label for="formControlLg" class="os-form-label">Large input</label>
+            <input type="text" class="os-form-control os-form-control-lg" id="formControlLg" placeholder="Large input" />
+          </div>
+          <div class="os-form-group">
+            <label for="formControlDefault" class="os-form-label">Default input</label>
+            <input type="text" class="os-form-control" id="formControlDefault" placeholder="Default input" />
+          </div>
+          <div class="os-form-group">
+            <label for="formControlSm" class="os-form-label">Small input</label>
+            <input type="text" class="os-form-control os-form-control-sm" id="formControlSm" placeholder="Small input" />
+          </div>
+        </div>
+
+        <h3>Checkboxes and Radios</h3>
+        <div class="component-demo">
+          <div class="os-form-group">
+            <div class="os-form-check">
+              <input class="os-form-check-input" type="checkbox" value="" id="defaultCheck1" />
+              <label class="os-form-check-label" for="defaultCheck1"> Default checkbox </label>
+            </div>
+            <div class="os-form-check">
+              <input class="os-form-check-input" type="checkbox" value="" id="defaultCheck2" disabled />
+              <label class="os-form-check-label" for="defaultCheck2"> Disabled checkbox </label>
+            </div>
+          </div>
+
+          <div class="os-form-group">
+            <div class="os-form-check">
+              <input class="os-form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked />
+              <label class="os-form-check-label" for="exampleRadios1"> Default radio </label>
+            </div>
+            <div class="os-form-check">
+              <input class="os-form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" />
+              <label class="os-form-check-label" for="exampleRadios2"> Second default radio </label>
+            </div>
+            <div class="os-form-check">
+              <input class="os-form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled />
+              <label class="os-form-check-label" for="exampleRadios3"> Disabled radio </label>
+            </div>
+          </div>
+        </div>
+
+        <h3>Inline Form</h3>
+        <div class="component-demo">
+          <form class="os-form-inline">
+            <div class="os-form-group">
+              <label for="inlineEmail" class="sr-only">Email</label>
+              <input type="email" class="os-form-control" id="inlineEmail" placeholder="Email" />
+            </div>
+            <div class="os-form-group">
+              <label for="inlinePassword" class="sr-only">Password</label>
+              <input type="password" class="os-form-control" id="inlinePassword" placeholder="Password" />
+            </div>
+            <div class="os-form-check">
+              <input class="os-form-check-input" type="checkbox" id="inlineCheck" />
+              <label class="os-form-check-label" for="inlineCheck">Remember me</label>
+            </div>
+            <button type="submit" class="os-button os-button-primary">Sign in</button>
+          </form>
+        </div>
+
+        <h3>Form Validation</h3>
+        <div class="component-demo">
+          <form class="was-validated">
+            <div class="os-form-group">
+              <label for="validationInput" class="os-form-label">Username</label>
+              <input type="text" class="os-form-control is-valid" id="validationInput" placeholder="Username" value="mark" required />
+              <div class="os-valid-feedback">Looks good!</div>
+            </div>
+            <div class="os-form-group">
+              <label for="invalidInput" class="os-form-label">Email</label>
+              <input type="email" class="os-form-control is-invalid" id="invalidInput" placeholder="Email" required />
+              <div class="os-invalid-feedback">Please provide a valid email.</div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Add more component sections as they are developed -->
+    </div>
+
+    <script src="../dist/orionsky-ui.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize OrionSky UI
+        OrionSky.init();
+      });
+    </script>
+  </body>
+</html>

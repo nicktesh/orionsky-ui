@@ -1,0 +1,140 @@
+// OrionSky UI Display Utilities
+// Display utility classes for controlling the display property of elements
+
+@use "../variables" as *;
+
+// Display property values
+.os-d-none {
+  display: none !important;
+}
+
+.os-d-inline {
+  display: inline !important;
+}
+
+.os-d-inline-block {
+  display: inline-block !important;
+}
+
+.os-d-block {
+  display: block !important;
+}
+
+.os-d-flex {
+  display: flex !important;
+}
+
+.os-d-inline-flex {
+  display: inline-flex !important;
+}
+
+.os-d-grid {
+  display: grid !important;
+}
+
+.os-d-inline-grid {
+  display: inline-grid !important;
+}
+
+.os-d-table {
+  display: table !important;
+}
+
+.os-d-table-row {
+  display: table-row !important;
+}
+
+.os-d-table-cell {
+  display: table-cell !important;
+}
+
+// Responsive display utilities
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: $width) {
+    .os-d-#{$breakpoint}-none {
+      display: none !important;
+    }
+
+    .os-d-#{$breakpoint}-inline {
+      display: inline !important;
+    }
+
+    .os-d-#{$breakpoint}-inline-block {
+      display: inline-block !important;
+    }
+
+    .os-d-#{$breakpoint}-block {
+      display: block !important;
+    }
+
+    .os-d-#{$breakpoint}-flex {
+      display: flex !important;
+    }
+
+    .os-d-#{$breakpoint}-inline-flex {
+      display: inline-flex !important;
+    }
+
+    .os-d-#{$breakpoint}-grid {
+      display: grid !important;
+    }
+
+    .os-d-#{$breakpoint}-inline-grid {
+      display: inline-grid !important;
+    }
+
+    .os-d-#{$breakpoint}-table {
+      display: table !important;
+    }
+
+    .os-d-#{$breakpoint}-table-row {
+      display: table-row !important;
+    }
+
+    .os-d-#{$breakpoint}-table-cell {
+      display: table-cell !important;
+    }
+  }
+}
+
+// Visibility utilities
+.os-visible {
+  visibility: visible !important;
+}
+
+.os-invisible {
+  visibility: hidden !important;
+}
+
+// Overflow utilities
+.os-overflow-auto {
+  overflow: auto !important;
+}
+
+.os-overflow-hidden {
+  overflow: hidden !important;
+}
+
+.os-overflow-visible {
+  overflow: visible !important;
+}
+
+.os-overflow-scroll {
+  overflow: scroll !important;
+}
+
+.os-overflow-x-auto {
+  overflow-x: auto !important;
+}
+
+.os-overflow-y-auto {
+  overflow-y: auto !important;
+}
+
+.os-overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+.os-overflow-y-hidden {
+  overflow-y: hidden !important;
+}

@@ -1,0 +1,257 @@
+// OrionSky UI Forms
+// Input controls and form layouts
+
+@use "../variables" as *;
+
+// Form control
+.os-form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: var(--os-font-weight-normal);
+  line-height: var(--os-line-height-base);
+  color: var(--os-body-color);
+  background-color: var(--os-body-bg);
+  background-clip: padding-box;
+  border: 1px solid var(--os-border-color);
+  border-radius: var(--os-border-radius);
+  transition: var(--os-transition-base);
+
+  &:focus {
+    color: var(--os-body-color);
+    background-color: var(--os-body-bg);
+    border-color: color-mix(in srgb, var(--os-primary-color) 75%, white);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--os-focus-ring-color);
+  }
+
+  &::placeholder {
+    color: var(--os-text-muted-color);
+    opacity: 1;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: #e9ecef;
+    opacity: 1;
+  }
+}
+
+// Form select
+select.os-form-control {
+  padding-right: 1.75rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  appearance: none;
+
+  &:focus::-ms-value {
+    color: var(--os-text-color);
+    background-color: var(--os-background-color);
+  }
+
+  &[multiple],
+  &[size]:not([size="1"]) {
+    height: auto;
+    padding-right: 0.75rem;
+    background-image: none;
+  }
+}
+
+// Form textarea
+textarea.os-form-control {
+  height: auto;
+}
+
+// Form group
+.os-form-group {
+  margin-bottom: 1rem;
+}
+
+// Form label
+.os-form-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+// Form text
+.os-form-text {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: var(--os-text-muted-color);
+}
+
+// Form check
+.os-form-check {
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5em;
+  margin-bottom: 0.125rem;
+}
+
+.os-form-check-input {
+  position: absolute;
+  margin-top: 0.25em;
+  margin-left: -1.5em;
+
+  &[type="checkbox"] {
+    border-radius: 0.25em;
+  }
+
+  &[type="radio"] {
+    border-radius: 50%;
+  }
+
+  &:checked {
+    background-color: var(--os-primary-color);
+    border-color: var(--os-primary-color);
+  }
+
+  &:focus {
+    border-color: color-mix(in srgb, var(--os-primary-color) 75%, white);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--os-focus-ring-color);
+  }
+}
+
+.os-form-check-label {
+  color: var(--os-body-color);
+}
+
+// Inline form check
+.os-form-check-inline {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+// Form sizes
+.os-form-control-lg {
+  min-height: calc(1.5em + 1rem + 2px);
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: var(--os-border-radius-lg);
+}
+
+.os-form-control-sm {
+  min-height: calc(1.5em + 0.5rem + 2px);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: var(--os-border-radius-sm);
+}
+
+// Form validation
+.os-form-control.is-valid {
+  border-color: var(--os-success-color);
+
+  &:focus {
+    border-color: var(--os-success-color);
+    box-shadow: 0 0 0 0.2rem rgba(#2ecc71, 0.25);
+  }
+}
+
+.os-form-control.is-invalid {
+  border-color: var(--os-danger-color);
+
+  &:focus {
+    border-color: var(--os-danger-color);
+    box-shadow: 0 0 0 0.2rem rgba(#e74c3c, 0.25);
+  }
+}
+
+.os-valid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: var(--os-success-color);
+}
+
+.os-invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: var(--os-danger-color);
+}
+
+.is-valid ~ .os-valid-feedback,
+.is-valid ~ .os-valid-tooltip,
+.was-validated :valid ~ .os-valid-feedback,
+.was-validated :valid ~ .os-valid-tooltip {
+  display: block;
+}
+
+.is-invalid ~ .os-invalid-feedback,
+.is-invalid ~ .os-invalid-tooltip,
+.was-validated :invalid ~ .os-invalid-feedback,
+.was-validated :invalid ~ .os-invalid-tooltip {
+  display: block;
+}
+
+// Form row
+.os-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+
+  > .os-col,
+  > [class*="os-col-"] {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+// Form inline
+.os-form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  .os-form-check {
+    width: 100%;
+  }
+
+  @media (min-width: map-get($breakpoints, sm)) {
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    .os-form-group {
+      display: flex;
+      flex: 0 0 auto;
+      flex-flow: row wrap;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    .os-form-control {
+      display: inline-block;
+      width: auto;
+      vertical-align: middle;
+    }
+
+    .os-form-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      padding-left: 0;
+    }
+
+    .os-form-check-input {
+      position: relative;
+      flex-shrink: 0;
+      margin-top: 0;
+      margin-right: 0.25rem;
+      margin-left: 0;
+    }
+  }
+}

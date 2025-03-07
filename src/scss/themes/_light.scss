@@ -1,0 +1,60 @@
+// OrionSky UI Light Theme
+// Default light theme variables
+
+:root {
+  // Colors
+  --os-primary-color: #3e64ff;
+  --os-secondary-color: #6c757d;
+  --os-success-color: #28a745;
+  --os-danger-color: #dc3545;
+  --os-warning-color: #ffc107;
+  --os-info-color: #17a2b8;
+  --os-light-color: #f8f9fa;
+  --os-dark-color: #343a40;
+  --os-white-color: #ffffff;
+  --os-black-color: #000000;
+
+  // Text colors
+  --os-body-color: #212529;
+  --os-text-muted-color: #6c757d;
+
+  // Background
+  --os-body-bg: #ffffff;
+
+  // Borders
+  --os-border-color: #dee2e6;
+  --os-border-radius: 0.25rem;
+  --os-border-radius-lg: 0.5rem;
+  --os-border-radius-sm: 0.2rem;
+
+  // Shadows
+  --os-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --os-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --os-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+  // Focus
+  --os-focus-ring-color: rgba(62, 100, 255, 0.25);
+
+  // Transitions
+  --os-transition-base: all 0.2s ease-in-out;
+
+  // Typography
+  --os-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --os-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --os-font-weight-normal: 400;
+  --os-font-weight-bold: 700;
+  --os-line-height-base: 1.5;
+
+  // Spacing
+  --os-spacer: 1rem;
+  --os-spacer-0: 0;
+  --os-spacer-1: calc(var(--os-spacer) * 0.25);
+  --os-spacer-2: calc(var(--os-spacer) * 0.5);
+  --os-spacer-3: var(--os-spacer);
+  --os-spacer-4: calc(var(--os-spacer) * 1.5);
+  --os-spacer-5: calc(var(--os-spacer) * 3);
+
+  // Grid
+  --os-gutter-x: 1.5rem;
+  --os-gutter-y: 1rem;
+}

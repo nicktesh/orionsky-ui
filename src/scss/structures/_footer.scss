@@ -1,0 +1,76 @@
+// OrionSky UI Footer
+// Footer component styles
+
+.os-footer {
+  padding: 1.5rem 0;
+  color: var(--os-text-muted-color);
+  background-color: var(--os-light-color);
+  border-top: 1px solid var(--os-border-color);
+}
+
+.os-footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.os-footer-text {
+  margin-bottom: 0;
+}
+
+.os-footer-links {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  li {
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: var(--os-text-muted-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--os-primary-color);
+      text-decoration: underline;
+    }
+  }
+}
+
+.os-footer-social {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  li {
+    margin-right: 0.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--os-text-muted-color);
+    background-color: var(--os-white-color);
+    border-radius: 50%;
+
+    &:hover {
+      color: var(--os-white-color);
+      background-color: var(--os-primary-color);
+    }
+  }
+}

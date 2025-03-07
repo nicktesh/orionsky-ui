@@ -1,0 +1,220 @@
+// OrionSky UI Colors
+// Color utility classes
+
+// Text colors
+.os-text-primary {
+  color: var(--os-primary-color) !important;
+}
+
+.os-text-secondary {
+  color: var(--os-secondary-color) !important;
+}
+
+.os-text-success {
+  color: var(--os-success-color) !important;
+}
+
+.os-text-danger {
+  color: var(--os-danger-color) !important;
+}
+
+.os-text-warning {
+  color: var(--os-warning-color) !important;
+}
+
+.os-text-info {
+  color: var(--os-info-color) !important;
+}
+
+.os-text-light {
+  color: var(--os-light-color) !important;
+}
+
+.os-text-dark {
+  color: var(--os-dark-color) !important;
+}
+
+.os-text-muted {
+  color: var(--os-text-muted-color) !important;
+}
+
+.os-text-white {
+  color: var(--os-white-color) !important;
+}
+
+// Background colors
+.os-bg-primary {
+  background-color: var(--os-primary-color) !important;
+}
+
+.os-bg-secondary {
+  background-color: var(--os-secondary-color) !important;
+}
+
+.os-bg-success {
+  background-color: var(--os-success-color) !important;
+}
+
+.os-bg-danger {
+  background-color: var(--os-danger-color) !important;
+}
+
+.os-bg-warning {
+  background-color: var(--os-warning-color) !important;
+}
+
+.os-bg-info {
+  background-color: var(--os-info-color) !important;
+}
+
+.os-bg-light {
+  background-color: var(--os-light-color) !important;
+}
+
+.os-bg-dark {
+  background-color: var(--os-dark-color) !important;
+}
+
+.os-bg-white {
+  background-color: var(--os-white-color) !important;
+}
+
+.os-bg-transparent {
+  background-color: transparent !important;
+}
+
+// Border colors
+.os-border-primary {
+  border-color: var(--os-primary-color) !important;
+}
+
+.os-border-secondary {
+  border-color: var(--os-secondary-color) !important;
+}
+
+.os-border-success {
+  border-color: var(--os-success-color) !important;
+}
+
+.os-border-danger {
+  border-color: var(--os-danger-color) !important;
+}
+
+.os-border-warning {
+  border-color: var(--os-warning-color) !important;
+}
+
+.os-border-info {
+  border-color: var(--os-info-color) !important;
+}
+
+.os-border-light {
+  border-color: var(--os-light-color) !important;
+}
+
+.os-border-dark {
+  border-color: var(--os-dark-color) !important;
+}
+
+.os-border-white {
+  border-color: var(--os-white-color) !important;
+}
+
+// Border utilities
+.os-border {
+  border: 1px solid var(--os-border-color) !important;
+}
+
+.os-border-top {
+  border-top: 1px solid var(--os-border-color) !important;
+}
+
+.os-border-right {
+  border-right: 1px solid var(--os-border-color) !important;
+}
+
+.os-border-bottom {
+  border-bottom: 1px solid var(--os-border-color) !important;
+}
+
+.os-border-left {
+  border-left: 1px solid var(--os-border-color) !important;
+}
+
+.os-border-0 {
+  border: 0 !important;
+}
+
+.os-border-top-0 {
+  border-top: 0 !important;
+}
+
+.os-border-right-0 {
+  border-right: 0 !important;
+}
+
+.os-border-bottom-0 {
+  border-bottom: 0 !important;
+}
+
+.os-border-left-0 {
+  border-left: 0 !important;
+}
+
+// Border radius
+.os-rounded {
+  border-radius: var(--os-border-radius) !important;
+}
+
+.os-rounded-top {
+  border-top-left-radius: var(--os-border-radius) !important;
+  border-top-right-radius: var(--os-border-radius) !important;
+}
+
+.os-rounded-right {
+  border-top-right-radius: var(--os-border-radius) !important;
+  border-bottom-right-radius: var(--os-border-radius) !important;
+}
+
+.os-rounded-bottom {
+  border-bottom-right-radius: var(--os-border-radius) !important;
+  border-bottom-left-radius: var(--os-border-radius) !important;
+}
+
+.os-rounded-left {
+  border-top-left-radius: var(--os-border-radius) !important;
+  border-bottom-left-radius: var(--os-border-radius) !important;
+}
+
+.os-rounded-circle {
+  border-radius: 50% !important;
+}
+
+.os-rounded-pill {
+  border-radius: 50rem !important;
+}
+
+.os-rounded-0 {
+  border-radius: 0 !important;
+}
+
+// Opacity utilities
+.os-opacity-0 {
+  opacity: 0 !important;
+}
+
+.os-opacity-25 {
+  opacity: 0.25 !important;
+}
+
+.os-opacity-50 {
+  opacity: 0.5 !important;
+}
+
+.os-opacity-75 {
+  opacity: 0.75 !important;
+}
+
+.os-opacity-100 {
+  opacity: 1 !important;
+}

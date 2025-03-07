@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrionSky UI - Structures Test</title>
+    <link rel="stylesheet" href="../dist/orionsky-ui.css" />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .test-section {
+        margin-bottom: 2rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--os-border-color);
+      }
+      .test-title {
+        margin-bottom: 1rem;
+      }
+      .test-description {
+        margin-bottom: 1.5rem;
+      }
+      .component-demo {
+        padding: 1.5rem;
+        border: 1px solid var(--os-border-color);
+        border-radius: var(--os-border-radius);
+        margin-bottom: 1rem;
+        position: relative;
+      }
+      .code-example {
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: var(--os-border-radius);
+        margin-bottom: 1rem;
+        overflow: auto;
+      }
+      .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+      .main-content {
+        flex: 1;
+        padding: 2rem 0;
+      }
+      .demo-sidebar {
+        position: relative !important;
+        width: 100% !important;
+        height: 300px !important;
+        transform: none !important;
+      }
+      .demo-container {
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+        border: 1px solid var(--os-border-color);
+        border-radius: var(--os-border-radius);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="os-button os-button-primary os-theme-toggle theme-toggle">Toggle Theme</button>
+
+    <!-- Header Demo -->
+    <section class="test-section" id="header">
+      <div class="os-container">
+        <h2 class="test-title">Header</h2>
+        <p class="test-description">Standard header component for page tops.</p>
+
+        <div class="component-demo">
+          <header class="os-header">
+            <div class="os-header-brand">
+              <img src="https://via.placeholder.com/40" alt="Logo" />
+              <span>OrionSky UI</span>
+            </div>
+            <nav class="os-header-nav">
+              <a href="#" class="os-nav-link active">Home</a>
+              <a href="#" class="os-nav-link">Features</a>
+              <a href="#" class="os-nav-link">Pricing</a>
+              <a href="#" class="os-nav-link">About</a>
+              <a href="#" class="os-nav-link disabled">Disabled</a>
+            </nav>
+            <button class="os-header-toggler">
+              <span>☰</span>
+            </button>
+          </header>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navbar Demo -->
+    <section class="test-section" id="navbar">
+      <div class="os-container">
+        <h2 class="test-title">Navbar</h2>
+        <p class="test-description">Navigation bar components with different styles.</p>
+
+        <h3>Light Navbar</h3>
+        <div class="component-demo">
+          <nav class="os-navbar os-navbar-light">
+            <div class="os-navbar-brand">
+              <img src="https://via.placeholder.com/30" alt="Logo" />
+              <span>OrionSky UI</span>
+            </div>
+            <button class="os-navbar-toggler">
+              <span>☰</span>
+            </button>
+            <div class="os-navbar-collapse">
+              <div class="os-navbar-nav">
+                <a href="#" class="os-nav-link os-active">Home</a>
+                <a href="#" class="os-nav-link">Features</a>
+                <a href="#" class="os-nav-link">Pricing</a>
+                <a href="#" class="os-nav-link">About</a>
+              </div>
+              <div class="os-navbar-text">Signed in as: User</div>
+            </div>
+          </nav>
+        </div>
+
+        <h3>Dark Navbar</h3>
+        <div class="component-demo">
+          <nav class="os-navbar os-navbar-dark">
+            <div class="os-navbar-brand">
+              <img src="https://via.placeholder.com/30" alt="Logo" />
+              <span>OrionSky UI</span>
+            </div>
+            <button class="os-navbar-toggler">
+              <span>☰</span>
+            </button>
+            <div class="os-navbar-collapse">
+              <div class="os-navbar-nav">
+                <a href="#" class="os-nav-link os-active">Home</a>
+                <a href="#" class="os-nav-link">Features</a>
+                <a href="#" class="os-nav-link">Pricing</a>
+                <a href="#" class="os-nav-link">About</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <h3>Primary Navbar</h3>
+        <div class="component-demo">
+          <nav class="os-navbar os-navbar-primary">
+            <div class="os-navbar-brand">
+              <img src="https://via.placeholder.com/30" alt="Logo" />
+              <span>OrionSky UI</span>
+            </div>
+            <button class="os-navbar-toggler">
+              <span>☰</span>
+            </button>
+            <div class="os-navbar-collapse">
+              <div class="os-navbar-nav">
+                <a href="#" class="os-nav-link os-active">Home</a>
+                <a href="#" class="os-nav-link">Features</a>
+                <a href="#" class="os-nav-link">Pricing</a>
+                <a href="#" class="os-nav-link">About</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sidebar Demo -->
+    <section class="test-section" id="sidebar">
+      <div class="os-container">
+        <h2 class="test-title">Sidebar</h2>
+        <p class="test-description">Vertical navigation sidebar component.</p>
+
+        <div class="component-demo">
+          <div class="demo-container">
+            <aside class="os-sidebar demo-sidebar show">
+              <div class="os-sidebar-header">
+                <div class="os-sidebar-brand">
+                  <img src="https://via.placeholder.com/30" alt="Logo" />
+                  <span>OrionSky UI</span>
+                </div>
+                <button class="os-sidebar-close">×</button>
+              </div>
+              <div class="os-sidebar-nav">
+                <div class="os-sidebar-item">
+                  <a href="#" class="os-sidebar-link active">
+                    <span>Dashboard</span>
+                  </a>
+                </div>
+                <div class="os-sidebar-item">
+                  <a href="#" class="os-sidebar-link">
+                    <span>Users</span>
+                  </a>
+                </div>
+                <div class="os-sidebar-item">
+                  <a href="#" class="os-sidebar-link">
+                    <span>Products</span>
+                  </a>
+                </div>
+                <div class="os-sidebar-divider"></div>
+                <div class="os-sidebar-heading">Reports</div>
+                <div class="os-sidebar-item">
+                  <a href="#" class="os-sidebar-link">
+                    <span>Sales</span>
+                  </a>
+                </div>
+                <div class="os-sidebar-item">
+                  <a href="#" class="os-sidebar-link">
+                    <span>Analytics</span>
+                  </a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Demo -->
+    <section class="test-section" id="footer">
+      <div class="os-container">
+        <h2 class="test-title">Footer</h2>
+        <p class="test-description">Page footer component with various layouts.</p>
+
+        <h3>Simple Footer</h3>
+        <div class="component-demo">
+          <footer class="os-footer">
+            <div class="os-footer-content">
+              <p class="os-footer-text">© 2023 OrionSky UI. All rights reserved.</p>
+              <ul class="os-footer-links">
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </footer>
+        </div>
+
+        <h3>Complex Footer</h3>
+        <div class="component-demo">
+          <footer class="os-footer">
+            <div class="os-container">
+              <div class="os-row">
+                <div class="os-col-md-4">
+                  <h5>OrionSky UI</h5>
+                  <p>A modern, open-source CSS/JavaScript library inspired by constellations and cosmic themes.</p>
+                </div>
+                <div class="os-col-md-2">
+                  <h5>Links</h5>
+                  <ul class="os-footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">About</a></li>
+                  </ul>
+                </div>
+                <div class="os-col-md-2">
+                  <h5>Resources</h5>
+                  <ul class="os-footer-links">
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Examples</a></li>
+                    <li><a href="#">Blog</a></li>
+                  </ul>
+                </div>
+                <div class="os-col-md-4">
+                  <h5>Stay Connected</h5>
+                  <ul class="os-footer-social">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Discord</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="os-footer-copyright">
+                <p>© 2023 OrionSky UI. All rights reserved.</p>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page Layout Demo -->
+    <section class="test-section" id="page-layout">
+      <div class="os-container">
+        <h2 class="test-title">Complete Page Layout</h2>
+        <p class="test-description">Example of a complete page layout using OrionSky UI structures.</p>
+
+        <div class="component-demo">
+          <div style="height: 500px; overflow: hidden; position: relative; border: 1px solid var(--os-border-color)">
+            <iframe src="layout-example.html" style="width: 100%; height: 100%; border: none"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../dist/orionsky-ui.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize OrionSky UI
+        if (typeof OrionSky !== "undefined") {
+          OrionSky.init();
+        }
+
+        // Theme toggle functionality
+        const themeToggle = document.querySelector(".os-theme-toggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", function () {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("os-theme", newTheme);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

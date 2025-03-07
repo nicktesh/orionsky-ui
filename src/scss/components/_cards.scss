@@ -1,29 +1,189 @@
-/* Cards */
+// OrionSky UI Cards
+// Flexible content containers
+
+@use "../variables" as *;
+
 .os-card {
-  background-color: #fff;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: var(--os-body-bg);
+  background-clip: border-box;
+  border: 1px solid var(--os-border-color);
+  border-radius: var(--os-border-radius);
+  box-shadow: var(--os-box-shadow-sm);
+  transition: var(--os-transition-base);
 
   &:hover {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--os-box-shadow);
+  }
+}
+
+.os-card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.os-card-title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: var(--os-font-weight-bold);
+}
+
+.os-card-subtitle {
+  margin-top: -0.375rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--os-text-muted-color);
+}
+
+.os-card-text {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.os-card-link {
+  & + .os-card-link {
+    margin-left: 1.25rem;
+  }
+}
+
+.os-card-header {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid var(--os-border-color);
+
+  &:first-child {
+    border-radius: calc(var(--os-border-radius) - 1px) calc(var(--os-border-radius) - 1px) 0 0;
+  }
+}
+
+.os-card-footer {
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid var(--os-border-color);
+
+  &:last-child {
+    border-radius: 0 0 calc(var(--os-border-radius) - 1px) calc(var(--os-border-radius) - 1px);
+  }
+}
+
+.os-card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(var(--os-border-radius) - 1px);
+  border-top-right-radius: calc(var(--os-border-radius) - 1px);
+}
+
+.os-card-img-bottom {
+  width: 100%;
+  border-bottom-right-radius: calc(var(--os-border-radius) - 1px);
+  border-bottom-left-radius: calc(var(--os-border-radius) - 1px);
+}
+
+// Card variants
+.os-card-primary {
+  background-color: var(--os-primary-color);
+  color: var(--os-text-light-color);
+
+  .os-card-header,
+  .os-card-footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.os-card-secondary {
+  background-color: var(--os-secondary-color);
+
+  .os-card-header,
+  .os-card-footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.os-card-success {
+  background-color: var(--os-success-color);
+  color: var(--os-text-light-color);
+
+  .os-card-header,
+  .os-card-footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.os-card-danger {
+  background-color: var(--os-danger-color);
+  color: var(--os-text-light-color);
+
+  .os-card-header,
+  .os-card-footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+// Card groups
+.os-card-group {
+  display: flex;
+  flex-direction: column;
+
+  > .os-card {
+    margin-bottom: 0.75rem;
   }
 
-  &-header {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--text-color);
+  @media (min-width: map-get($breakpoints, md)) {
+    flex-flow: row wrap;
+
+    > .os-card {
+      flex: 1 0 0%;
+      margin-bottom: 0;
+
+      + .os-card {
+        margin-left: 0;
+        border-left: 0;
+      }
+
+      &:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &:not(:first-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+// Card deck
+.os-card-deck {
+  display: flex;
+  flex-direction: column;
+
+  .os-card {
+    margin-bottom: 0.75rem;
   }
 
-  &-body {
-    font-size: 1rem;
-    color: var(--text-color);
-  }
+  @media (min-width: map-get($breakpoints, md)) {
+    flex-flow: row wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
 
-  &-footer {
-    margin-top: 1rem;
-    text-align: right;
+    .os-card {
+      flex: 1 0 0%;
+      margin-right: 0.75rem;
+      margin-bottom: 0;
+      margin-left: 0.75rem;
+    }
   }
 }

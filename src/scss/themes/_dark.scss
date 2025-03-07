@@ -1,6 +1,45 @@
+// ... existing code ...
 [data-theme="dark"] {
-  --background-color: #1a202c;
-  --text-color: #edf2f7;
-  --primary-color: #805ad5;
-  --secondary-color: #48bb78;
+  // Colors
+  --os-primary-color: #5a7bff;
+  --os-secondary-color: #8c959d;
+  --os-success-color: #48c774;
+  --os-danger-color: #f14668;
+  --os-warning-color: #ffdd57;
+  --os-info-color: #3e8ed0;
+  --os-light-color: #2c3034;
+  --os-dark-color: #f8f9fa;
+  --os-white-color: #212529;
+  --os-black-color: #ffffff;
+
+  // Text colors
+  --os-body-color: #e9ecef;
+  --os-text-muted-color: #adb5bd;
+
+  // Background
+  --os-body-bg: #121212;
+
+  // Borders
+  --os-border-color: #495057;
+
+  // Shadows
+  --os-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  --os-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+  --os-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.6);
+
+  // Focus
+  --os-focus-ring-color: rgba(90, 123, 255, 0.5);
+
+  // Typography
+  --os-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --os-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  // Spacing
+  --os-spacer: 1rem;
+  --os-spacer-0: 0;
+  --os-spacer-1: calc(var(--os-spacer) * 0.25);
+  --os-spacer-2: calc(var(--os-spacer) * 0.5);
+  --os-spacer-3: var(--os-spacer);
+  --os-spacer-4: calc(var(--os-spacer) * 1.5);
+  --os-spacer-5: calc(var(--os-spacer) * 3);
 }

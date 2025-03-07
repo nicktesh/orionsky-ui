@@ -1,23 +1,70 @@
 {
   "name": "orionsky-ui",
-  "version": "1.0.0",
-  "description": "A modern, open-source UI library built with SCSS and CSS variables.",
-  "main": "dist/orionsky.css",
+  "version": "0.1.0",
+  "description": "A modern, open-source CSS/JavaScript library inspired by constellations and cosmic themes",
+  "type": "module",
+  "main": "dist/orionsky-ui.min.js",
+  "module": "dist/orionsky-ui.esm.js",
+  "style": "dist/orionsky-ui.min.css",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "build": "sass src/scss/orionsky.scss dist/orionsky.css --no-source-map && postcss dist/orionsky.css -o dist/orionsky.min.css && npm run build-js && npm run build-demo",
-    "build-js": "rollup -c",
-    "build-demo": "sass demo/demo.scss dist/demo.css --no-source-map",
-    "watch": "sass --watch src/scss/orionsky.scss dist/orionsky.css"
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "sass src/scss/orionsky-ui.scss:dist/orionsky-ui.css --style expanded && sass src/scss/orionsky-ui.scss:dist/orionsky-ui.min.css --style compressed",
+    "build:js": "rollup -c",
+    "watch": "concurrently \"npm run watch:css\" \"npm run watch:js\"",
+    "watch:css": "sass --watch src/scss/orionsky-ui.scss:dist/orionsky-ui.css --style expanded",
+    "watch:js": "rollup -c -w",
+    "dev": "npm run watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
   },
-  "author": "Nick Tesh",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orionsky-ui/orionsky-ui.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "javascript",
+    "ui",
+    "framework",
+    "responsive",
+    "front-end",
+    "components",
+    "web"
+  ],
+  "author": "OrionSky UI Team",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orionsky-ui/orionsky-ui/issues"
+  },
+  "homepage": "https://orionsky-ui.com",
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^16.0.0",
-    "@rollup/plugin-terser": "^0.4.4",
-    "cssnano": "^5.1.15",
-    "postcss": "^8.4.49",
-    "postcss-cli": "^11.0.0",
-    "rollup": "^4.28.1",
-    "sass": "^1.65.1"
-  }
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.3",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.0.1",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0",
+    "rollup": "^3.21.5",
+    "sass": "^1.62.1"
+  },
+  "dependencies": {},
+  "browserslist": [
+    ">= 0.5%",
+    "last 2 major versions",
+    "not dead",
+    "Chrome >= 60",
+    "Firefox >= 60",
+    "Firefox ESR",
+    "iOS >= 12",
+    "Safari >= 12",
+    "not Explorer <= 11"
+  ]
 }

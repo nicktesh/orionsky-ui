@@ -1,0 +1,75 @@
+/**
+ * OrionSky UI - CSS Variables
+ * v0.1.0
+ * 
+ * This file contains all customizable CSS variables for OrionSky UI.
+ * Modify these variables to customize the appearance of your UI components.
+ */
+
+:root {
+  /* Core colors */
+  --os-primary-color: #3e64ff;
+  --os-secondary-color: #5edfff;
+  --os-success-color: #2ecc71;
+  --os-warning-color: #f39c12;
+  --os-danger-color: #e74c3c;
+  --os-info-color: #3498db;
+
+  /* Text colors */
+  --os-text-color: #333333;
+  --os-text-light-color: #ffffff;
+  --os-text-muted-color: #6c757d;
+
+  /* Background colors */
+  --os-background-color: #ffffff;
+  --os-background-dark-color: #121212;
+  --os-background-light-color: #f8f9fa;
+
+  /* Border properties */
+  --os-border-color: #dee2e6;
+  --os-border-radius: 0.25rem;
+  --os-border-radius-lg: 0.5rem;
+  --os-border-radius-sm: 0.125rem;
+
+  /* Spacing */
+  --os-spacer: 1rem;
+  --os-spacer-1: calc(var(--os-spacer) * 0.25);
+  --os-spacer-2: calc(var(--os-spacer) * 0.5);
+  --os-spacer-3: var(--os-spacer);
+  --os-spacer-4: calc(var(--os-spacer) * 1.5);
+  --os-spacer-5: calc(var(--os-spacer) * 3);
+
+  /* Typography */
+  --os-font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --os-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --os-font-size-base: 1rem;
+  --os-font-weight-normal: 400;
+  --os-font-weight-bold: 700;
+  --os-line-height-base: 1.5;
+
+  /* Shadow */
+  --os-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --os-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --os-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+  /* Transitions */
+  --os-transition-base: all 0.2s ease-in-out;
+  --os-transition-fade: opacity 0.15s linear;
+  --os-transition-collapse: height 0.35s ease;
+}
+
+/* Dark mode theme */
+[data-theme="dark"] {
+  --os-primary-color: #5a7bff;
+  --os-secondary-color: #7ee7ff;
+
+  --os-text-color: #f8f9fa;
+  --os-text-light-color: #ffffff;
+  --os-text-muted-color: #adb5bd;
+
+  --os-background-color: #121212;
+  --os-background-dark-color: #000000;
+  --os-background-light-color: #2d2d2d;
+
+  --os-border-color: #495057;
+}

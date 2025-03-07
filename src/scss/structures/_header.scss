@@ -1,0 +1,103 @@
+// OrionSky UI Header
+// Header component styles
+
+@use "../variables" as *;
+
+.os-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--os-white-color);
+  border-bottom: 1px solid var(--os-border-color);
+}
+
+.os-header-brand {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--os-dark-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--os-primary-color);
+    text-decoration: none;
+  }
+
+  img {
+    max-height: 40px;
+  }
+}
+
+.os-header-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  @media (min-width: map-get($breakpoints, md)) {
+    flex-direction: row;
+  }
+
+  .os-nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--os-dark-color);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--os-primary-color);
+    }
+
+    &.active {
+      color: var(--os-primary-color);
+      font-weight: 600;
+    }
+
+    &.disabled {
+      color: var(--os-text-muted-color);
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}
+
+.os-header-toggler {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid var(--os-border-color);
+  border-radius: var(--os-border-radius);
+
+  @media (min-width: map-get($breakpoints, md)) {
+    display: none;
+  }
+
+  &:hover {
+    background-color: var(--os-light-color);
+  }
+}
+
+.os-header-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+
+  @media (max-width: calc(map-get($breakpoints, md) - 1px)) {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  @media (min-width: map-get($breakpoints, md)) {
+    display: flex !important;
+    align-items: center;
+  }
+}

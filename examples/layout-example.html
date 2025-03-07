@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrionSky UI - Layout Example</title>
+    <link rel="stylesheet" href="../dist/orionsky-ui.css" />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .main-content {
+        flex: 1;
+        display: flex;
+        padding-top: 60px; /* Height of navbar */
+      }
+      .content-wrapper {
+        flex: 1;
+        padding: 1.5rem;
+      }
+      .os-navbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+      }
+      .os-sidebar {
+        z-index: 1020;
+      }
+      .page-content {
+        margin-left: 0;
+        transition: margin-left 0.3s ease-in-out;
+      }
+      @media (min-width: 992px) {
+        .page-content {
+          margin-left: 280px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="os-navbar os-navbar-primary">
+      <div class="os-navbar-brand">
+        <img src="https://via.placeholder.com/30" alt="Logo" />
+        <span>OrionSky UI</span>
+      </div>
+      <button class="os-navbar-toggler" id="sidebar-toggle">
+        <span>☰</span>
+      </button>
+      <div class="os-navbar-collapse">
+        <div class="os-navbar-nav">
+          <a href="#" class="os-nav-link os-active">Dashboard</a>
+          <a href="#" class="os-nav-link">Products</a>
+          <a href="#" class="os-nav-link">Customers</a>
+          <a href="#" class="os-nav-link">Reports</a>
+        </div>
+        <div class="os-navbar-nav" style="margin-left: auto">
+          <a href="#" class="os-nav-link">
+            <span>Notifications</span>
+          </a>
+          <a href="#" class="os-nav-link">
+            <span>Profile</span>
+          </a>
+          <button class="os-button os-button-outline-light os-theme-toggle">
+            <span>Toggle Theme</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <!-- Sidebar -->
+      <aside class="os-sidebar" id="main-sidebar">
+        <div class="os-sidebar-header">
+          <div class="os-sidebar-brand">
+            <img src="https://via.placeholder.com/30" alt="Logo" />
+            <span>OrionSky UI</span>
+          </div>
+          <button class="os-sidebar-close" id="sidebar-close">×</button>
+        </div>
+        <div class="os-sidebar-nav">
+          <div class="os-sidebar-item">
+            <a href="#" class="os-sidebar-link active">
+              <span>Dashboard</span>
+            </a>
+          </div>
+          <div class="os-sidebar-item">
+            <a href="#" class="os-sidebar-link">
+              <span>Orders</span>
+            </a>
+          </div>
+          <div class="os-sidebar-item">
+            <a href="#" class="os-sidebar-link">
+              <span>Products</span>
+            </a>
+          </div>
+          <div class="os-sidebar-item">
+            <a href="#" class="os-sidebar-link">
+              <span>Customers</span>
+            </a>
+          </div>
+          <div class="os-sidebar-divider"></div>
+          <div class="os-sidebar-heading">Reports</div>
+          <div class="os-sidebar-item">
+            <a href="#" class="os-sidebar-link">
+              <span>Sales</span>
+            </a>
+          </div>
+          <div class="os-sidebar-item">
+            <a href="#" class="os-sidebar-link">
+              <span>Analytics</span>
+            </a>
+          </div>
+          <div class="os-sidebar-divider"></div>
+          <div class="os-sidebar-heading">Account</div>
+          <div class="os-sidebar-item">
+            <a href="#" class="os-sidebar-link">
+              <span>Profile</span>
+            </a>
+          </div>
+          <div class="os-sidebar-item">
+            <a href="#" class="os-sidebar-link">
+              <span>Settings</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Page Content -->
+      <div class="page-content">
+        <div class="content-wrapper">
+          <div class="os-container-fluid">
+            <h1>Dashboard</h1>
+            <p>Welcome to the OrionSky UI dashboard example.</p>
+
+            <div class="os-row">
+              <div class="os-col-md-3">
+                <div class="os-card">
+                  <div class="os-card-body">
+                    <h5 class="os-card-title">Sales</h5>
+                    <h2>$24,500</h2>
+                    <p class="os-card-text">Total sales this month</p>
+                  </div>
+                </div>
+              </div>
+              <div class="os-col-md-3">
+                <div class="os-card">
+                  <div class="os-card-body">
+                    <h5 class="os-card-title">Orders</h5>
+                    <h2>145</h2>
+                    <p class="os-card-text">New orders this week</p>
+                  </div>
+                </div>
+              </div>
+              <div class="os-col-md-3">
+                <div class="os-card">
+                  <div class="os-card-body">
+                    <h5 class="os-card-title">Customers</h5>
+                    <h2>289</h2>
+                    <p class="os-card-text">Active customers</p>
+                  </div>
+                </div>
+              </div>
+              <div class="os-col-md-3">
+                <div class="os-card">
+                  <div class="os-card-body">
+                    <h5 class="os-card-title">Products</h5>
+                    <h2>56</h2>
+                    <p class="os-card-text">Products in inventory</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="os-row os-mt-4">
+              <div class="os-col-md-8">
+                <div class="os-card">
+                  <div class="os-card-header">
+                    <h5>Recent Orders</h5>
+                  </div>
+                  <div class="os-card-body">
+                    <p>This is where a table of recent orders would go.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="os-col-md-4">
+                <div class="os-card">
+                  <div class="os-card-header">
+                    <h5>Top Products</h5>
+                  </div>
+                  <div class="os-card-body">
+                    <p>This is where a list of top products would go.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="os-footer">
+      <div class="os-container">
+        <div class="os-footer-content">
+          <p class="os-footer-text">© 2023 OrionSky UI. All rights reserved.</p>
+          <ul class="os-footer-links">
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../dist/orionsky-ui.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize OrionSky UI
+        if (typeof OrionSky !== "undefined") {
+          OrionSky.init();
+        }
+
+        // Sidebar toggle functionality
+        const sidebarToggle = document.getElementById("sidebar-toggle");
+        const sidebarClose = document.getElementById("sidebar-close");
+        const sidebar = document.getElementById("main-sidebar");
+
+        if (sidebarToggle && sidebar) {
+          sidebarToggle.addEventListener("click", function () {
+            sidebar.classList.toggle("show");
+          });
+        }
+
+        if (sidebarClose && sidebar) {
+          sidebarClose.addEventListener("click", function () {
+            sidebar.classList.remove("show");
+          });
+        }
+
+        // Theme toggle functionality
+        const themeToggle = document.querySelector(".os-theme-toggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", function () {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("os-theme", newTheme);
+          });
+        }
+
+        // Set initial theme from localStorage
+        const savedTheme = localStorage.getItem("os-theme");
+        if (savedTheme) {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      });
+    </script>
+  </body>
+</html>

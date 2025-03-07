@@ -1,0 +1,159 @@
+// OrionSky UI Typography
+// Typography utility classes
+
+@use "../variables" as *;
+
+// Font weights
+.os-font-weight-light {
+  font-weight: 300 !important;
+}
+
+.os-font-weight-normal {
+  font-weight: var(--os-font-weight-normal) !important;
+}
+
+.os-font-weight-bold {
+  font-weight: var(--os-font-weight-bold) !important;
+}
+
+// Font styles
+.os-font-italic {
+  font-style: italic !important;
+}
+
+// Text alignment
+.os-text-left {
+  text-align: left !important;
+}
+
+.os-text-right {
+  text-align: right !important;
+}
+
+.os-text-center {
+  text-align: center !important;
+}
+
+.os-text-justify {
+  text-align: justify !important;
+}
+
+// Text transform
+.os-text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.os-text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.os-text-capitalize {
+  text-transform: capitalize !important;
+}
+
+// Text decoration
+.os-text-decoration-none {
+  text-decoration: none !important;
+}
+
+// Text wrapping
+.os-text-wrap {
+  white-space: normal !important;
+}
+
+.os-text-nowrap {
+  white-space: nowrap !important;
+}
+
+.os-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Text colors
+.os-text-primary {
+  color: var(--os-primary-color) !important;
+}
+
+.os-text-secondary {
+  color: var(--os-secondary-color) !important;
+}
+
+.os-text-success {
+  color: var(--os-success-color) !important;
+}
+
+.os-text-danger {
+  color: var(--os-danger-color) !important;
+}
+
+.os-text-warning {
+  color: var(--os-warning-color) !important;
+}
+
+.os-text-info {
+  color: var(--os-info-color) !important;
+}
+
+.os-text-muted {
+  color: var(--os-text-muted-color) !important;
+}
+
+// Font sizes
+.os-text-xs {
+  font-size: 0.75rem !important;
+}
+
+.os-text-sm {
+  font-size: 0.875rem !important;
+}
+
+.os-text-base {
+  font-size: 1rem !important;
+}
+
+.os-text-lg {
+  font-size: 1.25rem !important;
+}
+
+.os-text-xl {
+  font-size: 1.5rem !important;
+}
+
+.os-text-2xl {
+  font-size: 1.75rem !important;
+}
+
+.os-text-3xl {
+  font-size: 2rem !important;
+}
+
+.os-text-4xl {
+  font-size: 2.5rem !important;
+}
+
+.os-text-5xl {
+  font-size: 3rem !important;
+}
+
+// Responsive text alignment
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: $width) {
+    .os-text-#{$breakpoint}-left {
+      text-align: left !important;
+    }
+
+    .os-text-#{$breakpoint}-right {
+      text-align: right !important;
+    }
+
+    .os-text-#{$breakpoint}-center {
+      text-align: center !important;
+    }
+
+    .os-text-#{$breakpoint}-justify {
+      text-align: justify !important;
+    }
+  }
+}

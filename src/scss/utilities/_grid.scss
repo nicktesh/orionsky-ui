@@ -1,0 +1,173 @@
+// OrionSky UI Grid System
+// A responsive grid system using CSS Grid
+
+@use "../variables" as *;
+
+// Variables
+$grid-columns: 12;
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+$container-max-widths: (
+  "sm": 540px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1140px,
+  "xxl": 1320px,
+);
+
+// Container
+.os-container {
+  width: 100%;
+  padding-right: var(--os-gutter-x, 1rem);
+  padding-left: var(--os-gutter-x, 1rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Container breakpoints
+@each $breakpoint, $width in $container-max-widths {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    .os-container {
+      max-width: $width;
+    }
+  }
+}
+
+// Container fluid
+.os-container-fluid {
+  width: 100%;
+  padding-right: var(--os-gutter-x, 1rem);
+  padding-left: var(--os-gutter-x, 1rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Row
+.os-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--os-gutter-y, 1rem) var(--os-gutter-x, 1rem);
+}
+
+// No gutters
+.os-row-no-gutters {
+  gap: 0;
+}
+
+// Columns
+@for $i from 1 through $grid-columns {
+  .os-col-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+// Responsive columns
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: $width) {
+    @for $i from 1 through $grid-columns {
+      .os-col-#{$breakpoint}-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+}
+
+// Column offset
+@for $i from 0 through 11 {
+  .os-offset-#{$i} {
+    grid-column-start: $i + 1;
+  }
+}
+
+// Responsive column offset
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: $width) {
+    @for $i from 0 through 11 {
+      .os-offset-#{$breakpoint}-#{$i} {
+        grid-column-start: $i + 1;
+      }
+    }
+  }
+}
+
+// Grid gap utilities
+.os-gap-0 {
+  gap: 0 !important;
+}
+
+.os-gap-1 {
+  gap: 0.25rem !important;
+}
+
+.os-gap-2 {
+  gap: 0.5rem !important;
+}
+
+.os-gap-3 {
+  gap: 1rem !important;
+}
+
+.os-gap-4 {
+  gap: 1.5rem !important;
+}
+
+.os-gap-5 {
+  gap: 3rem !important;
+}
+
+// Row gap utilities
+.os-row-gap-0 {
+  row-gap: 0 !important;
+}
+
+.os-row-gap-1 {
+  row-gap: 0.25rem !important;
+}
+
+.os-row-gap-2 {
+  row-gap: 0.5rem !important;
+}
+
+.os-row-gap-3 {
+  row-gap: 1rem !important;
+}
+
+.os-row-gap-4 {
+  row-gap: 1.5rem !important;
+}
+
+.os-row-gap-5 {
+  row-gap: 3rem !important;
+}
+
+// Column gap utilities
+.os-column-gap-0 {
+  column-gap: 0 !important;
+}
+
+.os-column-gap-1 {
+  column-gap: 0.25rem !important;
+}
+
+.os-column-gap-2 {
+  column-gap: 0.5rem !important;
+}
+
+.os-column-gap-3 {
+  column-gap: 1rem !important;
+}
+
+.os-column-gap-4 {
+  column-gap: 1.5rem !important;
+}
+
+.os-column-gap-5 {
+  column-gap: 3rem !important;
+}
