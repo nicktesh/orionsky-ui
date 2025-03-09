@@ -1,0 +1,210 @@
+// OrionSky UI Icons
+// Icon component based on Phosphor Icons web font
+
+@use "../variables" as *;
+
+// Icon base styles
+.os-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--os-icon-color, currentColor);
+  vertical-align: middle;
+  transition: var(--os-transition-base);
+
+  // Ensure icon element fills the container
+  i {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Icon sizes
+.os-icon-xs {
+  --os-icon-size: 1rem;
+  font-size: var(--os-icon-size);
+}
+
+.os-icon-sm {
+  --os-icon-size: 1.25rem;
+  font-size: var(--os-icon-size);
+}
+
+.os-icon-md {
+  --os-icon-size: 1.5rem;
+  font-size: var(--os-icon-size);
+}
+
+.os-icon-lg {
+  --os-icon-size: 2rem;
+  font-size: var(--os-icon-size);
+}
+
+.os-icon-xl {
+  --os-icon-size: 2.5rem;
+  font-size: var(--os-icon-size);
+}
+
+// Icon colors
+.os-icon-primary {
+  --os-icon-color: var(--os-primary-color);
+  color: var(--os-icon-color);
+}
+
+.os-icon-secondary {
+  --os-icon-color: var(--os-secondary-color);
+  color: var(--os-icon-color);
+}
+
+.os-icon-success {
+  --os-icon-color: var(--os-success-color);
+  color: var(--os-icon-color);
+}
+
+.os-icon-danger {
+  --os-icon-color: var(--os-danger-color);
+  color: var(--os-icon-color);
+}
+
+.os-icon-warning {
+  --os-icon-color: var(--os-warning-color);
+  color: var(--os-icon-color);
+}
+
+.os-icon-info {
+  --os-icon-color: var(--os-info-color);
+  color: var(--os-icon-color);
+}
+
+.os-icon-light {
+  --os-icon-color: var(--os-light-color);
+  color: var(--os-icon-color);
+}
+
+.os-icon-dark {
+  --os-icon-color: var(--os-dark-color);
+  color: var(--os-icon-color);
+}
+
+.os-icon-muted {
+  --os-icon-color: var(--os-text-muted-color);
+  color: var(--os-icon-color);
+}
+
+// Icon with text
+.os-icon-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+// Icon animations
+.os-icon-spin {
+  animation: os-icon-spin 2s linear infinite;
+}
+
+.os-icon-pulse {
+  animation: os-icon-spin 1s steps(8) infinite;
+}
+
+@keyframes os-icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Icon with badge
+.os-icon-badge {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--os-danger-color);
+    border-radius: 50%;
+    transform: translate(25%, -25%);
+  }
+}
+
+// Icon with counter
+.os-icon-counter {
+  position: relative;
+
+  &::after {
+    content: attr(data-count);
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 1rem;
+    height: 1rem;
+    padding: 0 0.25rem;
+    font-size: 0.75rem;
+    font-weight: var(--os-font-weight-bold);
+    line-height: 1rem;
+    text-align: center;
+    color: var(--os-white-color);
+    background-color: var(--os-danger-color);
+    border-radius: 0.5rem;
+    transform: translate(50%, -50%);
+  }
+}
+
+// Button with icon
+.os-button {
+  i {
+    margin-right: 0.5rem;
+  }
+
+  &.os-button-icon-only {
+    padding: 0.5rem;
+    aspect-ratio: 1/1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      margin-right: 0;
+    }
+  }
+
+  &.os-button-icon-right {
+    i {
+      margin-right: 0;
+      margin-left: 0.5rem;
+      order: 2;
+    }
+  }
+}
+
+// Cosmic icon effect
+.os-icon-cosmic {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -25%;
+    left: -25%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(var(--os-primary-color-rgb, 62, 100, 255), 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}

@@ -4,11 +4,17 @@
 :root {
   // Primary Colors - Cosmic-inspired palette
   --os-primary-color: #3e64ff; // Bright blue like a young star
+  --os-primary-color-rgb: 62, 100, 255; // RGB values for primary color
   --os-secondary-color: #5edfff; // Cosmic nebula blue
+  --os-secondary-color-rgb: 94, 223, 255; // RGB values for secondary color
   --os-success-color: #2ecc71; // Vibrant cosmic green
+  --os-success-color-rgb: 46, 204, 113; // RGB values for success color
   --os-danger-color: #e74c3c; // Supernova red
+  --os-danger-color-rgb: 231, 76, 60; // RGB values for danger color
   --os-warning-color: #f39c12; // Cosmic amber
+  --os-warning-color-rgb: 243, 156, 18; // RGB values for warning color
   --os-info-color: #3498db; // Celestial blue
+  --os-info-color-rgb: 52, 152, 219; // RGB values for info color
 
   // Neutral Colors
   --os-light-color: #f8f9fa;
@@ -90,4 +96,18 @@
   --os-card-border-radius: var(--os-border-radius);
   --os-card-cap-padding-y: 0.75rem;
   --os-card-cap-padding-x: 1.25rem;
+
+  // Icon styles
+  --os-icon-size: 1.5rem;
+  --os-icon-stroke-width: 1.5;
+  --os-icon-color: currentColor;
+  --os-icon-primary-color: var(--os-primary-color);
+  --os-icon-secondary-color: var(--os-secondary-color);
+  --os-icon-success-color: var(--os-success-color);
+  --os-icon-danger-color: var(--os-danger-color);
+  --os-icon-warning-color: var(--os-warning-color);
+  --os-icon-info-color: var(--os-info-color);
+  --os-icon-light-color: var(--os-light-color);
+  --os-icon-dark-color: var(--os-dark-color);
+  --os-icon-muted-color: var(--os-text-muted-color);
 }

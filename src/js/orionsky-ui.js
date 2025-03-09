@@ -9,6 +9,8 @@
 
 // Import the logo switcher utility
 import LogoSwitcher from "./utilities/logo-switcher.js";
+// Import the icons module
+import Icons from "./modules/icons.js";
 
 // OrionSky UI main module
 const OrionSky = (function () {
@@ -56,6 +58,11 @@ const OrionSky = (function () {
 
     // Replace any logo placeholders
     LogoSwitcher.replacePlaceholdersWithThemeAwareLogos();
+  };
+
+  // Initialize icons
+  const _initIcons = function () {
+    Icons.initIcons();
   };
 
   // Initialize components
@@ -239,6 +246,7 @@ const OrionSky = (function () {
     init: function () {
       _initTheme();
       _initThemeToggle();
+      _initIcons();
       _initDropdowns();
       _initCollapse();
       _initTabs();
@@ -249,13 +257,14 @@ const OrionSky = (function () {
     },
 
     // Theme methods
-    theme: {
-      get: _getTheme,
-      set: _setTheme,
-      toggle: _toggleTheme,
-    },
+    getTheme: _getTheme,
+    setTheme: _setTheme,
+    toggleTheme: _toggleTheme,
 
-    // Version info
+    // Icon methods
+    loadIconWeight: Icons.loadIconWeight,
+
+    // Version
     version: VERSION,
 
     // Expose logo switcher for direct use
@@ -263,13 +272,5 @@ const OrionSky = (function () {
   };
 })();
 
-// Export for CommonJS, AMD, and global usage
-if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-  module.exports = OrionSky;
-} else if (typeof define === "function" && define.amd) {
-  define([], function () {
-    return OrionSky;
-  });
-} else {
-  window.OrionSky = OrionSky;
-}
+// Export as default
+export default OrionSky;

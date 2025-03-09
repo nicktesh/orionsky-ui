@@ -4,11 +4,17 @@
 [data-theme="dark"] {
   // Primary Colors - Cosmic-inspired palette
   --os-primary-color: #5a7bff; // Brighter blue for dark mode
+  --os-primary-color-rgb: 90, 123, 255; // RGB values for primary color
   --os-secondary-color: #7fecff; // Brighter nebula blue
+  --os-secondary-color-rgb: 127, 236, 255; // RGB values for secondary color
   --os-success-color: #48d983; // Cosmic green
+  --os-success-color-rgb: 72, 217, 131; // RGB values for success color
   --os-danger-color: #ff5a5a; // Supernova red
+  --os-danger-color-rgb: 255, 90, 90; // RGB values for danger color
   --os-warning-color: #ffb74d; // Cosmic amber
+  --os-warning-color-rgb: 255, 183, 77; // RGB values for warning color
   --os-info-color: #5aafff; // Celestial blue
+  --os-info-color-rgb: 90, 175, 255; // RGB values for info color
 
   // Neutral Colors
   --os-light-color: #2c3034;
@@ -57,4 +63,17 @@
   --os-spacer-3: var(--os-spacer);
   --os-spacer-4: calc(var(--os-spacer) * 1.5);
   --os-spacer-5: calc(var(--os-spacer) * 3);
+
+  // Icon styles - Adjusted for dark mode
+  --os-icon-color: currentColor;
+  --os-icon-primary-color: var(--os-primary-color);
+  --os-icon-secondary-color: var(--os-secondary-color);
+  --os-icon-success-color: var(--os-success-color);
+  --os-icon-danger-color: var(--os-danger-color);
+  --os-icon-warning-color: var(--os-warning-color);
+  --os-icon-info-color: var(--os-info-color);
+  --os-icon-light-color: var(--os-light-color);
+  --os-icon-dark-color: var(--os-dark-color);
+  --os-icon-muted-color: var(--os-text-muted-color);
+  --os-icon-cosmic-glow: 0 0 15px rgba(90, 123, 255, 0.5); // Special cosmic glow for icons in dark mode
 }

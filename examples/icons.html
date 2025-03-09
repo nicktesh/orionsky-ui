@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrionSky UI - Icons</title>
+    <link rel="stylesheet" href="../dist/orionsky-ui.css" />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        min-height: 100vh;
+      }
+      .test-section {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--os-border-color);
+      }
+      .test-title {
+        margin-bottom: 1rem;
+        color: var(--os-primary-color);
+      }
+      .test-description {
+        margin-bottom: 1.5rem;
+      }
+      .icon-demo {
+        padding: 1.5rem;
+        border: 1px solid var(--os-border-color);
+        border-radius: var(--os-border-radius);
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+      .icon-demo:hover {
+        box-shadow: var(--os-box-shadow-cosmic);
+        border-color: var(--os-primary-color);
+      }
+      .code-example {
+        background-color: var(--os-light-color);
+        padding: 1rem;
+        border-radius: var(--os-border-radius);
+        margin-bottom: 1rem;
+        overflow: auto;
+      }
+      .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+      .back-to-demo {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+      .page-header {
+        background: linear-gradient(135deg, rgba(62, 100, 255, 0.1) 0%, rgba(94, 223, 255, 0.1) 100%);
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+      }
+      .os-logo {
+        height: 40px;
+        margin-right: 1rem;
+      }
+      .header-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+      /* Cosmic section title */
+      .cosmic-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+      .cosmic-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--os-primary-color), var(--os-secondary-color));
+        border-radius: 2px;
+      }
+      /* Dark mode adjustments */
+      [data-theme="dark"] .code-example {
+        background-color: #1a1a1a;
+      }
+      .icon-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 1rem;
+      }
+      .icon-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        border: 1px solid var(--os-border-color);
+        border-radius: var(--os-border-radius);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      .icon-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--os-box-shadow-cosmic);
+        border-color: var(--os-primary-color);
+      }
+      .icon-name {
+        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        color: var(--os-text-muted-color);
+      }
+      .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+      }
+      .weight-selector {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .weight-selector button {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+      }
+      .search-container {
+        margin-bottom: 1.5rem;
+      }
+      .search-input {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--os-border-color);
+        border-radius: var(--os-border-radius);
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="os-button os-button-cosmic theme-toggle os-theme-toggle">
+      <span data-os-icon="moon-stars" data-os-icon-size="md"></span>
+    </button>
+
+    <a href="demo.html" class="os-button os-button-primary back-to-demo">
+      <span data-os-icon="caret-left" data-os-icon-size="md"></span>
+      Back to Demo
+    </a>
+
+    <div class="page-header">
+      <div class="os-container">
+        <div class="header-logo">
+          <img src="../assets/branding/orionsky-logo.svg" alt="OrionSky UI" class="os-logo logo-light" />
+          <img src="../assets/branding/orionsky-logo-dark.svg" alt="OrionSky UI" class="os-logo logo-dark" />
+          <h1>Icons</h1>
+        </div>
+        <p class="os-lead">Explore the OrionSky UI icon system powered by Phosphor Icons.</p>
+      </div>
+    </div>
+
+    <div class="os-container">
+      <!-- Icon Overview Section -->
+      <section class="test-section" id="icon-overview">
+        <h2 class="test-title cosmic-title">Icon System</h2>
+        <p class="test-description">OrionSky UI integrates with Phosphor Icons, a flexible icon family with a consistent style.</p>
+
+        <div class="icon-demo">
+          <p>The icon system provides a simple way to use icons in your application with various styles, sizes, and colors.</p>
+          <p>OrionSky UI uses <a href="https://phosphoricons.com/" target="_blank">Phosphor Icons</a>, which includes over 6,000 icons in various weights and styles.</p>
+        </div>
+      </section>
+
+      <!-- Basic Usage Section -->
+      <section class="test-section" id="basic-usage">
+        <h2 class="test-title cosmic-title">Basic Usage</h2>
+        <p class="test-description">Learn how to use icons in your application.</p>
+
+        <h3>HTML Attribute API</h3>
+        <div class="icon-demo">
+          <p>The simplest way to use icons is with the data attribute API:</p>
+          <div class="code-example">
+            <pre><code>&lt;span data-os-icon="rocket"&gt;&lt;/span&gt;
+&lt;span data-os-icon="star" data-os-icon-weight="fill"&gt;&lt;/span&gt;
+&lt;span data-os-icon="planet" data-os-icon-size="lg" class="os-icon-primary"&gt;&lt;/span&gt;</code></pre>
+          </div>
+          <div class="os-d-flex os-align-items-center os-gap-3 os-mt-3">
+            <span data-os-icon="rocket"></span>
+            <span data-os-icon="star" data-os-icon-weight="fill"></span>
+            <span data-os-icon="planet" data-os-icon-size="lg" class="os-icon-primary"></span>
+          </div>
+        </div>
+
+        <h3>JavaScript API</h3>
+        <div class="icon-demo">
+          <p>You can also load icon weights programmatically:</p>
+          <div class="code-example">
+            <pre><code>// Load a specific icon weight
+OrionSky.loadIconWeight('fill')
+  .then(() => {
+    console.log('Fill weight loaded');
+  });</code></pre>
+          </div>
+          <div id="js-icon-demo" class="os-d-flex os-align-items-center os-gap-3 os-mt-3">
+            <span data-os-icon="rocket"></span>
+            <span data-os-icon="star" data-os-icon-weight="fill"></span>
+            <span data-os-icon="planet" data-os-icon-size="lg" class="os-icon-primary"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Icon Sizes Section -->
+      <section class="test-section" id="icon-sizes">
+        <h2 class="test-title cosmic-title">Icon Sizes</h2>
+        <p class="test-description">OrionSky UI provides several predefined icon sizes.</p>
+
+        <div class="icon-demo">
+          <div class="os-d-flex os-align-items-center os-gap-4 os-flex-wrap">
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" data-os-icon-size="xs"></span>
+              <span class="os-mt-2 os-text-sm">xs</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" data-os-icon-size="sm"></span>
+              <span class="os-mt-2 os-text-sm">sm</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" data-os-icon-size="md"></span>
+              <span class="os-mt-2 os-text-sm">md (default)</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">lg</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" data-os-icon-size="xl"></span>
+              <span class="os-mt-2 os-text-sm">xl</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Icon Weights Section -->
+      <section class="test-section" id="icon-weights">
+        <h2 class="test-title cosmic-title">Icon Weights</h2>
+        <p class="test-description">Phosphor Icons provides several weights for each icon.</p>
+
+        <div class="icon-demo">
+          <div class="os-d-flex os-align-items-center os-gap-4 os-flex-wrap">
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="rocket" data-os-icon-weight="thin" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">thin</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="rocket" data-os-icon-weight="light" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">light</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="rocket" data-os-icon-weight="regular" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">regular</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="rocket" data-os-icon-weight="bold" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">bold</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="rocket" data-os-icon-weight="fill" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">fill</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="rocket" data-os-icon-weight="duotone" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">duotone</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Icon Colors Section -->
+      <section class="test-section" id="icon-colors">
+        <h2 class="test-title cosmic-title">Icon Colors</h2>
+        <p class="test-description">Icons can be colored using CSS classes or inline styles.</p>
+
+        <div class="icon-demo">
+          <h4>Using CSS Classes</h4>
+          <div class="os-d-flex os-align-items-center os-gap-4 os-flex-wrap os-mb-4">
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" class="os-icon-primary" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">primary</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" class="os-icon-secondary" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">secondary</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" class="os-icon-success" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">success</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" class="os-icon-danger" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">danger</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" class="os-icon-warning" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">warning</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" class="os-icon-info" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">info</span>
+            </div>
+          </div>
+
+          <h4>Using Inline Styles</h4>
+          <div class="os-d-flex os-align-items-center os-gap-4 os-flex-wrap">
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" style="color: #9c27b0" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">purple</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" style="color: #ff9800" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">orange</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" style="color: #4caf50" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">green</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Icon Effects Section -->
+      <section class="test-section" id="icon-effects">
+        <h2 class="test-title cosmic-title">Icon Effects</h2>
+        <p class="test-description">OrionSky UI provides several effects for icons.</p>
+
+        <div class="icon-demo">
+          <h4>Animations</h4>
+          <div class="os-d-flex os-align-items-center os-gap-4 os-flex-wrap os-mb-4">
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="spinner" data-os-icon-spin data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">spin</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="spinner" data-os-icon-pulse data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">pulse</span>
+            </div>
+          </div>
+
+          <h4>Cosmic Effect</h4>
+          <div class="os-d-flex os-align-items-center os-gap-4 os-flex-wrap os-mb-4">
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="star" data-os-icon-cosmic data-os-icon-size="lg" class="os-icon-primary"></span>
+              <span class="os-mt-2 os-text-sm">cosmic</span>
+            </div>
+          </div>
+
+          <h4>Badge & Counter</h4>
+          <div class="os-d-flex os-align-items-center os-gap-4 os-flex-wrap">
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="bell" data-os-icon-badge data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">badge</span>
+            </div>
+            <div class="os-d-flex os-flex-column os-align-items-center">
+              <span data-os-icon="envelope" data-os-icon-count="5" data-os-icon-size="lg"></span>
+              <span class="os-mt-2 os-text-sm">counter</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Icon with Text Section -->
+      <section class="test-section" id="icon-with-text">
+        <h2 class="test-title cosmic-title">Icon with Text</h2>
+        <p class="test-description">Icons can be combined with text using the os-icon-text class.</p>
+
+        <div class="icon-demo">
+          <div class="os-d-flex os-flex-column os-gap-3">
+            <span class="os-icon-text">
+              <span data-os-icon="rocket"></span>
+              Launch Rocket
+            </span>
+            <span class="os-icon-text">
+              <span data-os-icon="star" data-os-icon-weight="fill" class="os-icon-warning"></span>
+              Favorite
+            </span>
+            <span class="os-icon-text">
+              <span data-os-icon="check-circle" class="os-icon-success"></span>
+              Task Complete
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Icon in Buttons Section -->
+      <section class="test-section" id="icon-in-buttons">
+        <h2 class="test-title cosmic-title">Icon in Buttons</h2>
+        <p class="test-description">Icons can be used inside buttons.</p>
+
+        <div class="icon-demo">
+          <h4>Button with Icon</h4>
+          <div class="os-d-flex os-gap-3 os-flex-wrap os-mb-4">
+            <button class="os-button os-button-primary">
+              <span data-os-icon="rocket"></span>
+              Launch
+            </button>
+            <button class="os-button os-button-success">
+              <span data-os-icon="check"></span>
+              Confirm
+            </button>
+            <button class="os-button os-button-danger">
+              <span data-os-icon="trash"></span>
+              Delete
+            </button>
+          </div>
+
+          <h4>Icon-only Button</h4>
+          <div class="os-d-flex os-gap-3 os-flex-wrap os-mb-4">
+            <button class="os-button os-button-primary os-button-icon-only">
+              <span data-os-icon="plus"></span>
+            </button>
+            <button class="os-button os-button-secondary os-button-icon-only">
+              <span data-os-icon="pencil"></span>
+            </button>
+            <button class="os-button os-button-danger os-button-icon-only">
+              <span data-os-icon="trash"></span>
+            </button>
+          </div>
+
+          <h4>Button with Icon on Right</h4>
+          <div class="os-d-flex os-gap-3 os-flex-wrap">
+            <button class="os-button os-button-primary os-button-icon-right">
+              Next
+              <span data-os-icon="arrow-right"></span>
+            </button>
+            <button class="os-button os-button-secondary os-button-icon-right">
+              Settings
+              <span data-os-icon="gear"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Icon Explorer Section -->
+      <section class="test-section" id="icon-explorer">
+        <h2 class="test-title cosmic-title">Icon Explorer</h2>
+        <p class="test-description">Explore some of the most commonly used Phosphor Icons.</p>
+
+        <div class="icon-demo">
+          <div class="search-container">
+            <input type="text" id="icon-search" class="search-input" placeholder="Search icons..." />
+          </div>
+
+          <div class="weight-selector">
+            <button class="os-button os-button-sm os-button-primary weight-btn" data-weight="regular">Regular</button>
+            <button class="os-button os-button-sm os-button-outline-primary weight-btn" data-weight="thin">Thin</button>
+            <button class="os-button os-button-sm os-button-outline-primary weight-btn" data-weight="light">Light</button>
+            <button class="os-button os-button-sm os-button-outline-primary weight-btn" data-weight="bold">Bold</button>
+            <button class="os-button os-button-sm os-button-outline-primary weight-btn" data-weight="fill">Fill</button>
+            <button class="os-button os-button-sm os-button-outline-primary weight-btn" data-weight="duotone">Duotone</button>
+          </div>
+
+          <div class="icon-grid" id="icon-grid">
+            <!-- Icons will be loaded here via JavaScript -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="../dist/orionsky-ui.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize OrionSky UI
+        if (typeof OrionSky !== "undefined") {
+          OrionSky.init();
+        }
+
+        // Icon Explorer
+        const commonIcons = [
+          "rocket",
+          "star",
+          "planet",
+          "moon",
+          "sun",
+          "cloud",
+          "lightning",
+          "heart",
+          "user",
+          "users",
+          "house",
+          "buildings",
+          "car",
+          "airplane",
+          "train",
+          "envelope",
+          "phone",
+          "chat",
+          "bell",
+          "calendar",
+          "clock",
+          "hourglass",
+          "camera",
+          "image",
+          "video",
+          "music-notes",
+          "microphone",
+          "speaker-high",
+          "file",
+          "folder",
+          "trash",
+          "archive-box",
+          "bookmark",
+          "tag",
+          "flag",
+          "magnifying-glass",
+          "binoculars",
+          "eye",
+          "lock",
+          "key",
+          "shield",
+          "gear",
+          "wrench",
+          "hammer",
+          "screwdriver",
+          "bug",
+          "code",
+          "terminal",
+          "browser",
+          "globe",
+          "map-pin",
+          "compass",
+          "navigation-arrow",
+          "shopping-cart",
+          "credit-card",
+          "bank",
+          "currency-dollar",
+          "money",
+          "chart-line",
+          "chart-bar",
+          "chart-pie",
+          "graph",
+          "presentation",
+          "check",
+          "x",
+          "plus",
+          "minus",
+          "arrow-right",
+          "arrow-left",
+          "arrow-up",
+          "arrow-down",
+          "caret-right",
+          "caret-left",
+          "caret-up",
+          "caret-down",
+        ];
+
+        const iconGrid = document.getElementById("icon-grid");
+        const iconSearch = document.getElementById("icon-search");
+        const weightButtons = document.querySelectorAll(".weight-btn");
+        let currentWeight = "regular";
+
+        // Load initial icons
+        loadIcons(commonIcons, currentWeight);
+
+        // Handle weight button clicks
+        weightButtons.forEach((button) => {
+          button.addEventListener("click", async function () {
+            const weight = this.getAttribute("data-weight");
+
+            // Update active button
+            weightButtons.forEach((btn) => {
+              if (btn.getAttribute("data-weight") === weight) {
+                btn.classList.remove("os-button-outline-primary");
+                btn.classList.add("os-button-primary");
+              } else {
+                btn.classList.remove("os-button-primary");
+                btn.classList.add("os-button-outline-primary");
+              }
+            });
+
+            // Load the weight stylesheet if needed
+            if (typeof OrionSky.loadIconWeight === "function") {
+              try {
+                await OrionSky.loadIconWeight(weight);
+              } catch (error) {
+                console.error("Error loading icon weight:", error);
+              }
+            }
+
+            // Update icons
+            currentWeight = weight;
+            const searchTerm = iconSearch.value.trim().toLowerCase();
+            const filteredIcons = searchTerm ? commonIcons.filter((icon) => icon.includes(searchTerm)) : commonIcons;
+
+            loadIcons(filteredIcons, currentWeight);
+          });
+        });
+
+        // Handle search
+        iconSearch.addEventListener("input", function () {
+          const searchTerm = this.value.trim().toLowerCase();
+          const filteredIcons = searchTerm ? commonIcons.filter((icon) => icon.includes(searchTerm)) : commonIcons;
+
+          loadIcons(filteredIcons, currentWeight);
+        });
+
+        // Function to load icons
+        function loadIcons(icons, weight) {
+          // Clear grid
+          iconGrid.innerHTML = "";
+
+          // Load icons
+          icons.forEach((icon) => {
+            const iconItem = document.createElement("div");
+            iconItem.className = "icon-item";
+
+            const iconContainer = document.createElement("div");
+            iconContainer.className = "icon-container";
+
+            // Create the span element for the icon
+            const iconSpan = document.createElement("span");
+            iconSpan.setAttribute("data-os-icon", icon);
+            iconSpan.setAttribute("data-os-icon-weight", weight);
+            iconSpan.setAttribute("data-os-icon-size", "lg");
+
+            // Add the span to the container
+            iconContainer.appendChild(iconSpan);
+
+            const iconName = document.createElement("div");
+            iconName.className = "icon-name";
+            iconName.textContent = icon;
+
+            iconItem.appendChild(iconContainer);
+            iconItem.appendChild(iconName);
+            iconGrid.appendChild(iconItem);
+          });
+
+          // Initialize icons
+          if (typeof OrionSky !== "undefined") {
+            OrionSky.init();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
